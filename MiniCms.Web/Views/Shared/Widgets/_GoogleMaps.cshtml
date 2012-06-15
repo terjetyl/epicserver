@@ -1,0 +1,98 @@
+﻿@{
+    Bundles.Reference("Content/css/jquery-autocomplete.css");
+}
+
+<div id="map" style="height: 300px; width: 100%">
+</div>
+@if (Roles.IsUserInRole("Admin"))
+{
+    <div class="c_widgetsettingstoolbar">
+        <span><a id="settingslink" href="#">Settings</a></span>
+    </div>
+    <div class="c_widgetsettings">
+        <div class="editor-label">
+            <label for="">
+                Latitude & Longitude</label>
+        </div>
+        <div class="editor-field">
+            <input type="text" id="lat" value="@ViewBag.Lat" />
+            <input type="text"id="lng" value="@ViewBag.Lon" />
+        </div>
+        <div class="editor-label">
+            <label for="">
+                Address</label>
+        </div>
+        <div class="editor-field">
+            <input type="text" value="@ViewBag.FullAddress" id="address" />
+        </div>
+        <p class="submitbutton">
+            <input type="button" id="btnSave" value="Save" /></p>
+    </div>
+}
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+<script type="text/javascript" src="@Url.Content("~/Scripts/gmap3.min.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Scripts/jquery-autocomplete.js")"></script>
+
+<script type="text/javascript">
+    var lat = @ViewBag.Lat.ToString(new System.Globalization.CultureInfo("en-US"))
+    var lng = @ViewBag.Lon.ToString(new System.Globalization.CultureInfo("en-US"))
+    
+    $("#map").gmap3({
+        action: 'init',
+        options: {
+            center: [lat, lng],
+            zoom: 13
+        }
+    });
+
+    $("#map").gmap3({
+        action: 'addMarker',
+        latLng: [lat, lng]
+    });
+    
+    $('#address').autocomplete({
+        source: function() {
+            $("#map").gmap3({
+                action:'getAddress',
+                address: $(this).val(),
+                callback:function(results){
+                    if (!results) return;
+                    $('#address').autocomplete(
+                        'display',
+                        results,
+                        false
+                    );
+                }   
+            });
+        },
+        cb:{
+            cast: function(item){
+                return item.formatted_address;
+            },
+            select: function(item) {
+                $("#map").gmap3(
+                    {action:'clear', name:'marker'},
+                    {action:'addMarker',
+                    latLng:item.geometry.location,
+                    map:{center:true}
+                });
+                $('#lat').val(item.geometry.location.lat());
+                $('#lng').val(item.geometry.location.lng());
+            }
+        }
+    });
+
+    $('#settingslink').click(function() {
+        $('.c_widgetsettings').toggle('fast');
+        return false;
+    });
+
+    $('#btnSave').click(function() {
+        var lat = $('#lat').val();
+        var lng = $('#lng').val();
+
+        $mvc.Script.SaveCoordinates({ lat: lat, lng: lng }).success(function() {
+        });
+    });
+
+</script>

@@ -1,0 +1,261 @@
+﻿@color1: yellow;
+@color2: #000;
+
+
+.island.promo,
+pre,
+code{
+	background-color:#F7F7F7;
+}
+
+
+
+html{
+	font-family:Georgia, "Times New Roman", serif;
+}
+
+body {
+background: none repeat scroll 0 0 #F7F7F7;
+color: #333;
+font: small Georgia Serif;
+margin: 0;
+text-align: center;
+}
+
+.wrapper {
+    background: #fff;
+    -moz-box-shadow: 0 0 10px #888;
+    -webkit-box-shadow: 0 0 10px #888;
+    box-shadow: 0 0 10px #888;
+    padding: 5px;
+    font: 110% Arial,Serif;
+    text-align: left;
+}
+
+.grids {
+    padding: 1em;
+}
+
+/*------------------------------------*\
+	$ISLANDS
+\*------------------------------------*/
+.island.promo{
+	color:#6d6841;
+	border:1px solid #F7F7F7;
+	
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	border-radius:5px;
+	-moz-box-shadow:0 1px 0 rgba(255,255,255,0.5) inset;
+	-webkit-box-shadow:0 1px 0 rgba(255,255,255,0.5) inset;
+	box-shadow:0 1px 0 rgba(255,255,255,0.5) inset;
+}
+	.island.promo a{
+		color:inherit;
+		font-weight:bold;
+		text-decoration:underline;
+	}
+
+
+
+
+
+/*------------------------------------*\
+	$HEADER
+\*------------------------------------*/
+.header{
+	padding:1.5em 1em;
+    background: @color1;
+    color: @color2;
+    height: 5em;
+    max-width: 960px;
+}
+.logo{
+	background:url(../img/logo.jpg);
+}
+.logo,.logo img{
+	width:280px;
+	height:130px;
+}
+
+/*------------------------------------*\
+	$FOOTER
+\*------------------------------------*/
+.footer{
+	padding:1em;
+	border-top:1px solid #ccc;
+	color:#fff;
+    background: @color1;
+}
+
+/*------------------------------------*\
+	TYPE
+\*------------------------------------*/
+a{
+	color:#4a8ec2;
+}
+mark{
+	border-bottom:2px solid;
+}
+pre{
+	padding:10px;
+}
+pre code,
+pre mark{
+	background:none;
+}
+
+
+
+
+
+/*------------------------------------*\
+	MISC
+\*------------------------------------*/
+::selection		{ background-color:#4a8ec2; color:#fff; }
+::-moz-selection{ background-color:#4a8ec2; color:#fff; }
+hr{
+	padding:0;
+	border:none;
+	height:1px;
+	background-color:#ccc;
+}
+
+#nav.dropdown{
+overflow:visible;
+}
+.dropdown li{
+position:relative;
+}
+.dropdown a{
+display:block;
+}
+.dropdown ul{ /* Set up the dropdown and hide it off-screen. */
+list-style:none;
+margin:0;
+position:absolute;
+left:-99999px;
+top:100%;
+background:#fff; /* Adding a background makes the dropdown work properly in IE7+. Make this as close to your page's background as possible (i.e. white page == white background). */
+background:rgba(255,255,255,0); /* But! Let's make the background fully transparent where we can, we don't actually want to see it if we can help it... */
+}
+.dropdown li:hover ul{ /* Bring the dropdown back onto screen when you hover its parent li. */
+left:0;
+}
+#nav.dropdown ul li{ /* Remove floats etc from dropdown list items. */
+position:static;
+float:none;
+}
+.dropdown ul a{
+white-space:nowrap; /* Stop the list items breaking. */
+}
+
+/*--- HOVER STYLES ---*/
+.dropdown li:hover a{ /* These create persistent hover states, meaning the top-most link stays hovered when your cursor has moved down the list. */
+text-decoration:underline;
+}
+.dropdown li:hover ul a{ /* The persistent hover state does however create a global style for links even before they're hovered. Here we undo these effect. */
+text-decoration:none;
+}
+.dropdown ul li a:hover{ /* Here we define the most explicit hover states--what happens when you hover each individual link. */
+text-decoration:underline;
+}
+
+#menu {
+    max-width: 960px;
+    background: aliceblue;
+    border: 1px solid darkgray;
+    border-radius: 0.2em;
+    margin: 5px -10px;
+}
+
+#menu ul li {
+    float: left;padding-left: 10px;list-style: none;
+}
+
+input, textarea, select {
+    width: 100%;
+}
+
+.submitbutton {
+    padding: 5px 0;
+}
+
+.maintitle {
+    font-size: 1.3em
+}
+
+.nav {
+    background-color: @color2;
+    color: #fff;
+    margin: 0 0 10px 0;
+}
+
+.nav li a{
+    border-right: 1px solid @color1;
+    color: white;
+    font-weight: normal;
+    padding: 10px 35px;
+}
+
+.innerfooter {
+    background-color: @color2;
+    color: #fff;
+    text-align: center;
+    font: 11px arial;
+    padding:1em;
+}
+
+.nav li a:hover {
+    background: #333;
+}
+
+.gamma {
+    font-size: 1.8em;
+}
+
+.header h1 {
+    padding-top: 1.5em;
+    font-size: 2em;
+}
+
+.media img {
+    border: 1px solid #CCC;
+    padding: 1px;
+}
+
+.grid-6 p {
+    font-family: Arial, serif;
+    font-size: 14px;
+    line-height: 1.6em;
+}
+
+.island h3 {
+    color: #000;
+}
+
+#c_newsletter
+{
+	background-color: @color2;
+    color: #fff;
+}
+
+.button
+{
+    color: #fff;
+}
+
+.button:hover {
+    text-decoration: none;
+    background-color: #111111;
+}
+
+.island
+{
+    padding: 0;
+}
+
+.tag
+{
+    background-color: #777777;
+}

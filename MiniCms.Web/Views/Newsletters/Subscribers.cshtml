@@ -1,0 +1,22 @@
+﻿@model IEnumerable<MiniCms.Model.Entities.NewsletterSubscriber>
+
+@{
+    ViewBag.Title = "Newsletter";
+}
+
+<div class="grid-7">
+    <h2>Newsletter</h2>
+    <table>
+    @foreach(var subscriber in Model)
+    {
+        <tr>
+            <td>@subscriber.Email</td>
+            <td>@subscriber.Name</td>
+            <td>@Html.ActionLink("Delete", "Unsubscribe", new { id = subscriber.Id })</td>
+        </tr>
+    }
+    </table>
+</div>
+<div class="grid-5">
+    @Html.Partial("_AdminMenu")
+</div>

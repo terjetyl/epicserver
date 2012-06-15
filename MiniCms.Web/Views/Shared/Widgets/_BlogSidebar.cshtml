@@ -1,0 +1,113 @@
+﻿@using MiniCms.Web.Models.Entities
+<div class='sidebar section' id='sidebar'>
+    @*<div class='widget HTML' id='HTML1'>
+            <h2 class='title'>
+                Subscribe</h2>
+            <div class='widget-content'>
+                <div id="column-2-left">
+                    <div class="facebook-s">
+                        <a href="http://www.facebook.com/">Facebook </a>
+                        <br />
+                        Join our fan page</div>
+                    <div class="rss-s">
+                        <a href="http://www.feedburner.com/">RSS Feeds</a>
+                        <br />
+                        Subscribe now</div>
+                    <div class="newsletter-s">
+                        <a href="http://www.feedburner.com/" id="newsletter" class="colorbox join cboxElement">
+                            Newsletters</a>
+                        <br />
+                        Subscribe today</div>
+                    <div class="twitter-s">
+                        <a href="http://www.twitter.com/">Twitter</a><br />
+                        Follow us
+                    </div>
+                </div>
+            </div>
+            <div class='clear'>
+            </div>
+        </div>*@
+    <div class='widget CustomSearch' id='CustomSearch1'>
+        <h2 class='title'>Search This Blog</h2>
+        <div class='widget-content'>
+            <div id='search_form'>
+                @using (Html.BeginForm("Search", "News", System.Web.Mvc.FormMethod.Get))
+                {
+                    <input type="text" class="gsc-input" name="q" />
+                    <input type="submit" value="Search" />
+                }
+            </div>
+        </div>
+        <div class='clear'>
+        </div>
+    </div>
+</div>
+<div id='2columns'>
+    @if (ViewBag.EnableTaggableContent)
+    {
+        <div class='col-left'>
+            <div class='sidebar section' id='sidebar2'>
+                <div class='widget Label' id='Label1'>
+                    <h2>Tags</h2>
+                    <div class='widget-content list-label-widget-content'>
+                        <ul>
+                            @foreach (var tag in ViewBag.Tags)
+                            {
+                                <li><a dir='ltr' href='/news/search?tag=@tag.Name' rel='nofollow'>
+                                    @tag.Name</a><span dir='ltr'>(@tag.Count)</span></li>
+                            }
+                        </ul>
+                        <div class='clear'>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+@*<div@(ViewBag.EnableTaggableContent ? " class=col-right" : string.Empty)>
+            <div class='sidebar section' id='sidebar3'>
+                <div class='widget BlogArchive' id='BlogArchive1'>
+                    <h2>
+                        News Archive</h2>
+                    <div class='widget-content'>
+                        <div id='ArchiveList'>
+                            <div id='BlogArchive1_ArchiveList'>
+                                <ul class='hierarchy'>
+                                    @foreach(var year in ViewBag.Archive.Years)
+                                    {
+                                        <li class='archivedate expanded'>
+                                            <a class='toggle' href='javascript:void(0)'>
+                                                <span class='zippy toggle-open'>&#9660;&#160;</span> 
+                                            </a>
+                                            <a class='post-count-link' href='/news/search?year=@year.Name'>@year.Name</a> 
+                                            <span class='post-count' dir='ltr'>(@year.Count)</span>
+                                            <ul class='hierarchy'>
+                                                @foreach (var month in year.Months)
+                                                {
+                                                    <li class='archivedate expanded'><a class='toggle' href='javascript:void(0)'><span
+                                                                                                                                     class='zippy toggle-open'>&#9660;&#160;</span> </a>
+                                                                                                                                     <a class='post-count-link' href='/news/search?month=@month.Name'>
+                                                                                                                                                                                            @month.Name</a> <span class='post-count' dir='ltr'>(@month.Count)</span>
+                                                        <ul class='posts'>
+                                                            @foreach (BlogPostModel post in month.Posts)
+                                                            {
+                                                                <li>@Html.ActionLink(post.Title, "Details", "News")</li>
+                                                            }
+                                                        </ul>
+                                                    </li>
+                                                }
+                                            </ul>
+                                        </li>
+                                    }
+
+                                </ul>
+                            </div>
+                        </div>
+                        <div class='clear'>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>*@
+</div>
+<div class='clear'></div>

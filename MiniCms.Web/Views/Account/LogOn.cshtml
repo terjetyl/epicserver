@@ -1,0 +1,41 @@
+﻿@model MiniCms.Web.Models.LogOnModel
+@{
+    ViewBag.Title = MiniCms.Web.Resources.Account.Login.LogOn;
+}
+<div class="span6">
+    @Html.ValidationSummary(true, "Login was unsuccessful. Please correct the errors and try again.")
+    @using (Html.BeginForm("logon", "Account", FormMethod.Post, new { @class = "form-horizontal" }))
+    {
+        <fieldset>
+            <legend>@MiniCms.Web.Resources.Account.Login.AccountInformation</legend>
+            <div class="control-group">
+                @Html.LabelFor(m => m.UserName)
+                <div class="controls">
+                    @Html.TextBoxFor(m => m.UserName, new { @class = "input-xlarge", required = "required" })
+                </div>
+            </div>
+            <div class="control-group">
+                @Html.LabelFor(m => m.Password)
+                <div class="controls">
+                    @Html.TextBoxFor(m => m.Password, new { @class = "input-xlarge", required = "required" })
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="checkbox">
+                    @Html.CheckBoxFor(m => m.RememberMe) @Html.LabelFor(m => m.RememberMe)
+                </label>
+            </div>
+            <p>
+                <button type="submit">@MiniCms.Web.Resources.Account.Login.LogOn</button>
+            </p>
+        </fieldset>
+    }
+</div>
+<div class="span6">
+    <h2>
+        @MiniCms.Web.Resources.Account.Login.LogOn</h2>
+    <p>
+        @MiniCms.Web.Resources.Account.Login.RegisterText1 @Html.ActionLink(@MiniCms.Web.Resources.Account.Login.Register, "Register")
+        @MiniCms.Web.Resources.Account.Login.RegisterText2
+    </p>
+</div>

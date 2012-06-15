@@ -1,0 +1,51 @@
+﻿<h2>@MiniCms.Web.Resources.Widgets.ContactUs.Title</h2>
+<div id="pFeedback" style="padding: 5px; background-color: Yellow; border: 1px dashed #000;
+    display: none">
+    <span>Melding sendt!</span>
+</div>
+<table>
+    <tr>
+        <td>
+            <label for="name">@MiniCms.Web.Resources.Widgets.ContactUs.Name</label><br />
+            <input type="text" name="name" id="name"/>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <label for="email">@MiniCms.Web.Resources.Widgets.ContactUs.Email</label><br />
+            <input type="text" name="email" id="email"/>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <label for="mailmessage">@MiniCms.Web.Resources.Widgets.ContactUs.Message</label><br />
+            <textarea name="mailmessage" id="mailmessage" rows="5" cols="30"></textarea>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type="button" id="btnSend" value="Send" />
+        </td>
+    </tr>
+</table>
+
+<script type="text/javascript">
+    $('#btnSend').click(function () {
+        $('#btnSend').attr("disabled", "disabled");
+        $('#btnSend').attr("value", "sender...");
+        $.ajax({
+            type: 'POST',
+            url: '/webapi/homeapi',
+            data: JSON.stringify({ Name: $('#name').val(), Email: $('#email').val(), Message: $('#mailmessage').val() }),
+            success: function (data) {
+                $('#pFeedback').show();
+            },
+            error: function (xhr, ajaxOptions, thrownError) {
+                alert(xhr.status);
+                alert(thrownError);
+            },
+            dataType: 'json',
+            contentType: 'application/json; charset=utf-8'
+        });
+    });
+</script>

@@ -1,0 +1,221 @@
+@color1: #000;
+@footer-color: #999;
+@blue: #4A8EC2;
+@white: #fff;
+
+.island.promo,
+pre,
+code{
+	background-color:#fef8c4;
+}
+
+html{
+	background:url(../img/css/page/page-top.gif) left top repeat-x @white;
+	padding-top:10px; /* Move the content down over the page-top background-image. */
+	font-family:Georgia, "Times New Roman", serif;
+}
+
+
+.wrapper {
+    background: @white;
+    -moz-box-shadow: 0 0 10px #888;
+    -webkit-box-shadow: 0 0 10px #888;
+    box-shadow: 0 0 10px #888;
+    padding: 5px;
+    text-align: left;
+}
+
+.island.promo{
+	color:#6d6841;
+	border:1px solid #d8d566;
+	
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	border-radius:5px;
+	-moz-box-shadow:0 1px 0 rgba(255,255,255,0.5) inset;
+	-webkit-box-shadow:0 1px 0 rgba(255,255,255,0.5) inset;
+	box-shadow:0 1px 0 rgba(255,255,255,0.5) inset;
+}
+	.island.promo a{
+		color:inherit;
+		font-weight:bold;
+		text-decoration:underline;
+	}
+
+.header{
+	background-image: url("http://www.sbo.no/images/miljobilde.jpg");
+    color: @white;
+    max-width: 960px;
+}
+.logo{
+	background:url(../img/logo.jpg);
+}
+.logo,.logo img{
+	width:280px;
+	height:130px;
+}
+
+.footer{
+	padding-top:1.5em;
+	border-top:1px solid #ccc;
+	color:@footer-color;
+	background:#000;
+}
+
+a{
+	color:@blue;
+}
+mark{
+	border-bottom:2px solid;
+}
+pre{
+	padding:10px;
+}
+pre code,
+pre mark{
+	background:none;
+}
+
+
+::selection		{ background-color:@blue; color:#fff; }
+::-moz-selection{ background-color:@blue; color:#fff; }
+hr{
+	padding:0;
+	border:none;
+	height:1px;
+	background-color:#ccc;
+}
+
+
+#nav.dropdown{
+overflow:visible;
+}
+.dropdown li{
+position:relative;
+}
+.dropdown a{
+display:block;
+}
+.dropdown ul{ /* Set up the dropdown and hide it off-screen. */
+list-style:none;
+margin:0;
+position:absolute;
+left:-99999px;
+top:100%;
+background:#fff; /* Adding a background makes the dropdown work properly in IE7+. Make this as close to your page's background as possible (i.e. white page == white background). */
+background:rgba(255,255,255,0); /* But! Let's make the background fully transparent where we can, we don't actually want to see it if we can help it... */
+}
+.dropdown li:hover ul{ /* Bring the dropdown back onto screen when you hover its parent li. */
+left:0;
+}
+#nav.dropdown ul li{ /* Remove floats etc from dropdown list items. */
+position:static;
+float:none;
+}
+.dropdown ul a{
+white-space:nowrap; /* Stop the list items breaking. */
+}
+
+/*--- HOVER STYLES ---*/
+.dropdown li:hover a{ /* These create persistent hover states, meaning the top-most link stays hovered when your cursor has moved down the list. */
+text-decoration:underline;
+}
+.dropdown li:hover ul a{ /* The persistent hover state does however create a global style for links even before they're hovered. Here we undo these effect. */
+text-decoration:none;
+}
+.dropdown ul li a:hover{ /* Here we define the most explicit hover states--what happens when you hover each individual link. */
+text-decoration:underline;
+}
+
+#menu {
+    max-width: 960px;
+    background: aliceblue;
+    border: 1px solid darkgray;
+    border-radius: 0.2em;
+    margin: 5px -10px;
+}
+
+#menu ul li {
+    float: left;padding-left: 10px;list-style: none;
+}
+
+
+
+.submitbutton {
+    padding: 5px 0;
+}
+
+.maintitle {
+    font-size: 1.3em
+}
+
+.nav {
+    background-color: @color1;
+    color: #fff;
+    margin: 0 0 10px 0;
+}
+
+.nav a{
+    color: #fff;
+}
+
+.nav li{
+    border-color: #fff;
+}
+
+.nav li a{
+    color: white;
+}
+
+.innerfooter {
+    text-align: center;
+    font: 11px arial;
+    padding:1em;
+	background: #000;
+	color: @footer-color;
+}
+
+.grids {
+    padding: 0.5em;
+}
+
+
+.footer ul li
+{
+	list-style:none;
+	padding:0;
+}
+
+.footer ul
+{
+	margin-bottom: 0;
+}
+
+#c_newsletter
+{
+	background-color: @color1;
+    color: #fff;
+}
+
+.button
+{
+    color: #fff;
+}
+
+.button:hover {
+    text-decoration: none;
+    background-color: #111111;
+}
+
+.c_carsearch {
+    margin-bottom: 1em;
+}
+
+@media screen and (max-width: 480px) {
+
+	.header h1
+	{
+		font-size: 1em;
+	}
+
+}

@@ -1,0 +1,15 @@
+﻿@{
+    ViewBag.Title = "New feature";
+}
+
+<div class="grid-6">
+    @using(Html.BeginForm())
+    {
+        <input type="text" name="name"/>
+        <input type="submit" value="Save"/>
+    }
+</div>
+<div class="grid-6">
+    @Html.Partial("_FeatureMenu")
+</div>
+

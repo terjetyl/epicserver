@@ -1,0 +1,17 @@
+﻿using System.Collections.Generic;
+
+namespace MiniCms.Model.Entities
+{
+    public class User : EntityBase, IFeatureUser
+    {
+        public User()
+        {
+            Groups = new List<string>();
+        }
+
+        public string Name { get; set; }
+        public string Username { get; set; }
+        public string Email { get; set; }
+        public List<string> Groups { get; set; }
+    }
+}

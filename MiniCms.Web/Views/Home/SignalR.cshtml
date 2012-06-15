@@ -1,0 +1,43 @@
+﻿@{
+    ViewBag.Title = "SignalR";
+}
+
+<script src="/Scripts/jquery.signalR.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(function () {
+    var connection = $.connection('/echo');
+
+    connection.received(function (data) {
+        $('#messages').append('<li>' + data + '</li>');
+    });
+
+    connection.start();
+
+    $("#broadcast").click(function () {
+        connection.send($('#msg').val());
+    });
+});
+</script>
+
+<input type="text" id="msg" />
+<input type="button" id="broadcast" value="broadcast" />
+
+<ul id="messages">
+</ul>
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        var time = $.connection.serverTime;
+        $("#btnTest").click(function () {
+            time.start();
+        });
+
+        time.settime = function (t) {
+            $("#Time").html(t);
+        };
+        $.connection.hub.start();
+    });
+</script>
+<div id="Time"></div>
+<input id="btnTest" type="button" value="Test"/>

@@ -1,0 +1,19 @@
+﻿<div class="island promo">
+    <h2>
+        Admin</h2>
+    <ul>
+        <li>@Html.ActionLink("Start", "Index", "Admin")</li>
+        <li>@Html.ActionLink("New article", "Create", "News")</li>
+        <li>@Html.ActionLink("Settings", "Settings", "Admin")</li>
+        <li>@Html.ActionLink("Logo", "Logo", "Admin")</li>
+        <li>@Html.ActionLink("Menu", "Menu", "Admin")</li>
+        @if(ViewBag.EnableNewsletter)
+        {
+            <li>@Html.ActionLink("Newsletters", "Index", "Newsletters")</li>
+            <li>@Html.ActionLink("Newsletter subscribers", "Subscribers", "Newsletters")</li>
+        }
+        
+    </ul>
+    <p>
+        Change your blog</p>
+</div>

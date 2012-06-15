@@ -1,0 +1,21 @@
+﻿@{
+    ViewBag.Title = "Om oss";
+}
+
+<div class="grid-6">
+    <h3>Her finner du oss</h3>
+    @Html.Partial("Widgets/_GoogleMaps")
+    <p></p>
+</div>
+<div class="grid-6">
+    <div class="island promo">
+        <h3>
+            Kontakt</h3>
+        @Html.Partial("Widgets/_ContactView")
+        <p>
+            @Html.Raw(ViewBag.Description)</p>
+    </div>
+</div>
+<div class="grid-6">
+    @Html.Partial("Widgets/_ContactUsForm")
+</div>

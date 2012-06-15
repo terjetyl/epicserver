@@ -1,0 +1,25 @@
+﻿@model MiniCms.Web.Models.SearchViewModel
+
+@{
+    ViewBag.Title = "Search";
+}
+
+<div class="grid-7">
+    <table class="c_searchresult">
+
+    
+    @foreach (var post in Model.BlogPosts)
+    {
+        <tr>
+            <td><div class="media"><a href="@post.FriendlyUrl"><img alt="@post.Title" title="@post.Title" src="@(post.ImageUrl)?width=200" /></a></div></td>
+            <td>@Html.ActionLink(post.Title, "Details", new { id = post.Id })</td>
+        </tr>
+    }
+    </table>
+</div>
+<!-- /grid-6 -->
+<div class="grid-5">
+    <div class="island promo">
+        @Html.Partial("Widgets/_BlogSidebar")
+    </div>
+</div>

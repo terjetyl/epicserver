@@ -1,0 +1,65 @@
+﻿@model MiniCms.Web.Models.EditBlogPostViewModel
+
+@{
+    ViewBag.Title = "Ny artikkel";
+}
+
+<script type="text/javascript" src="../../Scripts/tinymce/tiny_mce.js"></script>
+<script type="text/javascript" >
+    tinyMCE.init({
+        mode: "textareas",
+        height: 500,
+        theme: "advanced",   //(n.b. no trailing comma, this will be critical as you experiment later)
+        plugins: "paste",
+        paste_preprocess: function (pl, o) {
+            //example: keep bold,italic,underline and paragraphs
+            //o.content = strip_tags( o.content,'<b><u><i><p>' );
+
+            // remove all tags => plain text
+            o.content = strip_tags(o.content, '@Html.Raw(ViewBag.AllowedHtmlElements)');
+        }
+    });
+</script>
+
+<div class="grid-7">
+    <h2>Ny artikkel</h2>
+    @using (Html.BeginForm("Create", "News", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        <div class="validation-summary-errors">
+            @Html.ValidationSummary()
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(m => m.BlogPost.Title)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(m => m.BlogPost.Title)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(m => m.BlogPost.Image)
+        </div>
+        <div class="editor-field">
+            <input type="file" name="BlogPost.Image" />
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(m => m.BlogPost.Body)
+        </div>
+        <div class="editor-field">
+            @Html.TextAreaFor(m => m.BlogPost.Body)
+        </div>
+         if(Model.EnableTags)
+         {
+             <div class="editor-label">
+                @Html.LabelFor(m => m.BlogPost.Tags)
+            </div>
+            <div class="editor-field">
+                @Html.TextBoxFor(m => m.BlogPost.Tags, new { placeholder = "tag1, tag2, tag3" })
+            </div>
+         }
+        <p class="submitbutton">
+            <input type="submit" value="Lagre"/>
+        </p>
+    }
+</div>
+<div class="grid-5">
+    @Html.Partial("_AdminMenu")
+</div>

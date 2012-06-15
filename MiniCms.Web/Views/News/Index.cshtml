@@ -1,0 +1,32 @@
+﻿@model MiniCms.Web.Models.HomeIndexModel
+
+<div class="grid-7">
+    @foreach (var post in Model.Posts)
+    {
+        <h1 class="beta"><a href="@post.FriendlyUrl">@post.Title</a></h1> 
+        
+        if(!string.IsNullOrWhiteSpace(post.Tags))
+        {
+            <div class="c_tags">
+            @foreach (string tag in post.Tags.Split(','))
+            {
+                <a class="tag" href="/news/search/?tag=@tag.Trim()">@tag.Trim()</a>
+            }
+            </div>
+        }
+
+        if (!string.IsNullOrEmpty(post.ImageUrl))
+        {
+            <div class="media">
+                <img alt="" src="@(post.ImageUrl)?width=540"/>
+            </div>
+        }
+        <p>@Html.Raw(post.Body)</p>
+    }
+</div>
+<!-- /grid-6 -->
+<div class="grid-5">
+    <div class="island promo">
+        @Html.Partial("Widgets/_BlogSidebar")
+    </div>
+</div>

@@ -1,0 +1,19 @@
+﻿@model IEnumerable<MiniCms.Web.Models.Entities.FeatureModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="grid-6">
+    <table>
+    @foreach(var feature in Model)
+    {
+        <tr>
+            <td>@Html.ActionLink(feature.Name, "Edit", new { id = feature.Id })</td>
+        </tr>
+    }
+    </table>
+</div>
+<div class="grid-6">
+    @Html.Partial("_FeatureMenu")
+</div>

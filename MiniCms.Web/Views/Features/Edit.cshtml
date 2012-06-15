@@ -1,0 +1,31 @@
+﻿@model MiniCms.Web.Models.Entities.FeatureModel
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<div class="grid-6">
+    @using (Html.BeginForm())
+    {
+        <div class="validation-summary-errors">
+            @Html.ValidationSummary()
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(m => m.Name)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(m => m.Name)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(m => m.FeatureStatus)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(m => m.FeatureStatus, Model.FeatureStatuses)
+        </div>
+        @Html.HiddenFor(o => o.Id)
+        <p class="submitbutton"><input type="submit" value="Save"/></p>
+    }
+</div>
+<div class="grid-6">
+    @Html.Partial("_FeatureMenu")
+</div>

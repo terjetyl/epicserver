@@ -1,0 +1,39 @@
+﻿@model MiniCms.Web.Models.NewsDetailsViewModel
+@{
+    ViewBag.Title = Model.BlogPost.Title;
+}
+
+<div id="fb-root"></div>
+<script type="text/javascript">    (function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/nb_NO/all.js#xfbml=1";
+        fjs.parentNode.insertBefore(js, fjs);
+    } (document, 'script', 'facebook-jssdk'));</script>
+
+<div class="grid-7">
+    <h1>@Model.BlogPost.Title</h1>
+    @if(!string.IsNullOrWhiteSpace(Model.BlogPost.Tags)) {
+    <div class="c_tags">
+        @foreach (string tag in Model.BlogPost.Tags.Split(','))
+        {
+            <a class="tag" href="/news/search/?tag=@tag.Trim()">@tag.Trim()</a>
+        }
+    </div>
+    } 
+    @if (!string.IsNullOrEmpty(Model.BlogPost.ImageUrl)) {
+    <div class="media">
+        <img alt="" src="@(Model.BlogPost.ImageUrl)?width=540"/>
+    </div>
+    }
+    <p>@Html.Raw(Model.BlogPost.Body)</p>
+    
+    @if (Model.EnableCommentsOnContent)
+    {
+        <div class="fb-comments" data-href="@Request.Url.AbsolutePath" data-num-posts="10" data-width="470"></div>
+    }
+</div>
+<div class="grid-5">
+    @Html.Partial("Widgets/_BlogSidebar")
+</div>

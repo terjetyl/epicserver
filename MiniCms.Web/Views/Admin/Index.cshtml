@@ -1,0 +1,28 @@
+﻿@model MiniCms.Web.Models.AdminViewModel
+
+@{
+    ViewBag.Title = "Admin";
+}
+
+<div class="grid-7">
+    <h2>Last articles</h2>
+    @foreach (var post in Model.Posts)
+    {
+        <h3>@post.Title</h3>
+        <p>@Html.ActionLink("Edit", "Edit", "News", new { id = post.Id }, null) 
+            | @Html.ActionLink("Delete", "Delete", "News", new { id = post.Id }, null) 
+            | @Html.ActionLink("Send as newsletter", "Create", "Newsletters", new { blogpost = post.Id }, null)
+            | @(!post.Published ? Html.ActionLink("Publish", "Publish", "News", new { id = post.Id }, null) : Html.ActionLink("Unpublish", "UnPublish", "News", new { id = post.Id }, null))</p>
+        if (!string.IsNullOrEmpty(post.ImageUrl))
+        {
+            <div class="media">
+                <img alt="" src="@(post.ImageUrl)?width=450"/>
+            </div>
+        }
+        <p>@Html.Raw(post.Body)</p>
+    }
+</div>
+
+<div class="grid-5">
+    @Html.Partial("_AdminMenu")
+</div>

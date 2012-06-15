@@ -1,0 +1,15 @@
+﻿@model MiniCms.Web.Models.Entities.BlogPostModel
+
+@{
+    ViewBag.Title = "SendNewsletter";
+    Layout = "~/Views/Shared/_EmailLayout.cshtml";
+}
+
+<h1>@Model.Title</h1>
+@if (!string.IsNullOrEmpty(Model.ImageUrl))
+{
+    <div>
+        <img src="@(Model.ImageUrl)?width=600" alt="@Model.Title"/>
+    </div>
+}
+<p>@Html.Raw(Model.Body)</p>

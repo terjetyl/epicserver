@@ -1,0 +1,7 @@
+﻿@if(Request.IsAuthenticated) {
+    <text><strong>@Html.ActionLink(User.Identity.Name, "index", "settings")</strong>!
+    [ @Html.ActionLink(MiniCms.Web.Resources.Account.Login.LogOff, "LogOff", "Account") ]</text>
+}
+else {
+    @:[ @Html.ActionLink(MiniCms.Web.Resources.Account.Login.LogOn, "LogOn", "Account") ]
+}

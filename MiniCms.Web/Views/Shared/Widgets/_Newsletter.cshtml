@@ -1,0 +1,33 @@
+﻿<div id="c_newsletter">
+    <ul id="signupform">
+        <li>Navn
+            <input type="text" id="newslettername" /></li>
+        <li>Email
+            <input type="text" id="newsletteremail" /></li>
+        <li><a class="button" id="btnNewsletterSignup" href="#">Meld meg på nyhetsbrev</a></li>
+    </ul>
+    <div id="c_newsletterresponse">
+        <span>Takk. Du er nå påmeldt nyhetsbrevet.</span>
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#btnNewsletterSignup').click(function () {
+            $.ajax({
+                type: 'POST',
+                url: '/api/NewsletterSubscribers',
+                data: JSON.stringify({ Name: $('#newslettername').val(), Email: $('#newsletteremail').val() }),
+                success: function (data) {
+                    $('#signupform').hide();
+                    $('#c_newsletterresponse').show();
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+                    alert(xhr.status);
+                    alert(thrownError);
+                },
+                dataType: 'json',
+                contentType: 'application/json; charset=utf-8'
+            });
+        });
+    });
+</script>

@@ -1,0 +1,99 @@
+﻿@using System.Threading
+@{
+    Bundles.Reference("Scripts/jquery-1.7.2.js");
+    Bundles.Reference("Scripts/jquery.validate.js");
+    Bundles.Reference("Scripts/jquery.validate.unobtrusive.js");
+    Bundles.Reference("Scripts/jqBootstrapValidation.js");
+    Bundles.Reference("Scripts/jquery.globalize/globalize.js");
+    Bundles.Reference("Scripts/json2.js");
+    Bundles.Reference("Scripts/modernizr-2.5.3.js");
+    Bundles.Reference("Scripts/knockout.js");
+    Bundles.Reference("Scripts/bootstrap.js");
+    Bundles.Reference("Scripts/script.js");
+    Bundles.Reference("Content/bootstrap.css");
+    Bundles.Reference("Content/bootstrap-responsive.css");
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
+    <title>@ViewBag.Title</title>
+    @Bundles.RenderStylesheets()
+    @Bundles.RenderScripts()
+    @StackExchange.Profiling.MiniProfiler.RenderIncludes()
+    <link rel="shortcut icon" href="/Content/icon.png">
+    <link rel="apple-touch-icon-precomposed" href="/Content/icon.png" />
+    <style type="text/css">
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+    </style>
+</head>
+    <body>
+        <div class="navbar navbar-fixed-top">
+          <div class="navbar-inner">
+            <div class="container">
+              <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </a>
+              <a class="brand" href="#">@ViewBag.Name</a>
+              <div class="nav-collapse">
+                <ul class="nav">
+                  <li class="active"><a href="#">Home</a></li>
+                  <li><a href="#about">About</a></li>
+                  <li><a href="#contact">Contact</a></li>
+                  <li>@if (ViewBag.EnableUserLogin)
+                {
+                    <div class="headertools">
+                        @Html.Partial("_LogOnPartial")
+                    </div>
+                }</li>
+                </ul>
+              </div><!--/.nav-collapse -->
+            </div>
+          </div>
+        </div>
+        <div class="container">
+                @RenderBody()
+            @if (ViewBag.EnableNewsletter)
+            {
+                @Html.Partial("Widgets/_Newsletter")
+            }
+            <footer>
+                @DateTime.Now.Year &copy; @ViewBag.Name, Powered by MiniCms
+            </footer>
+        </div>
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $.validator.methods.number = function (value, element) {
+                    return this.optional(element) || !isNaN(Globalize.parseFloat(value));
+                };
+
+                $(function () { Globalize.culture('@Thread.CurrentThread.CurrentUICulture.ToString()'); });
+            });
+        </script>
+        @if (!string.IsNullOrEmpty(ViewBag.GoogleAnalyticsId))
+        {
+            <script type="text/javascript">
+
+                var _gaq = _gaq || [];
+                _gaq.push(['_setAccount', '@ViewBag.GoogleAnalyticsId']);
+                _gaq.push(['_trackPageview']);
+
+                (function() {
+                    var ga = document.createElement('script');
+                    ga.type = 'text/javascript';
+                    ga.async = true;
+                    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                    var s = document.getElementsByTagName('script')[0];
+                    s.parentNode.insertBefore(ga, s);
+                })();
+
+            </script>
+        }
+    </body>
+</html>

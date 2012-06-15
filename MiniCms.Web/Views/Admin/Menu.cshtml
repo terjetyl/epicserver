@@ -1,0 +1,77 @@
+﻿@model MiniCms.Web.Models.MenuModel
+@{
+    ViewBag.Title = "Menu";
+}
+<div class="grid-7">
+    <h2>
+        Menu</h2>
+    <table>
+        <tr>
+            <th>
+                Title
+            </th>
+            <th>
+                Url
+            </th>
+            <th>
+                SortIndex
+            </th>
+            <th>
+                &nbsp;
+            </th>
+        </tr>
+        @foreach (var menuitem in Model.MenuItems)
+        {
+            <tr>
+                <td>@Html.ActionLink(menuitem.Title, "Menu", new { menuitemId = menuitem.Id })
+                </td>
+                <td>@menuitem.Url
+                </td>
+                <td>@menuitem.SortIndex
+                </td>
+                <td>@Html.ActionLink("x", "DeleteMenuItem", new { menuitemId = menuitem.Id })
+                </td>
+            </tr>
+        }
+    </table>
+    @using (Html.BeginForm("SaveMenuItem", "Admin"))
+    {
+        <table>
+            <tr>
+                <td>
+                    Title
+                </td>
+                <td>
+                    @Html.TextBoxFor(o => o.CurrentMenuItem.Title)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Url
+                </td>
+                <td>
+                    @Html.TextBoxFor(o => o.CurrentMenuItem.Url)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    SortIndex
+                </td>
+                <td>
+                    @Html.TextBoxFor(o => o.CurrentMenuItem.SortIndex)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                </td>
+                <td>
+                    @Html.HiddenFor(o => o.CurrentMenuItem.Id)
+                    <input type="submit" value="Save" />
+                </td>
+            </tr>
+        </table>
+    }
+</div>
+<div class="grid-5">
+    @Html.Partial("_AdminMenu")
+</div>

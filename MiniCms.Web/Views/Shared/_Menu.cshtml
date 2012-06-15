@@ -1,0 +1,6 @@
+﻿<ul>
+    @foreach (var item in ((IEnumerable<MiniCms.Model.Entities.MenuItem>)ViewBag.Menu.MenuItems).OrderBy(o => o.SortIndex))
+    {
+        <li @(item.IsActive ? "class=\"active\"" : string.Empty)><a href="@item.Url">@item.Title</a></li>
+    }
+</ul>
