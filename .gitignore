@@ -3,6 +3,7 @@ obj
 _ReSharper.Nettfaktura
 NDependOut
 Backup
+TestResults
 
 *resharper.user
 # Visual Studio

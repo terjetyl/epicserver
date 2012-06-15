@@ -2289,7 +2289,6 @@
   <ItemGroup>
     <Content Include="Areas\Admin\Content\examples\thumb-450\Thumbs.db" />
     <Content Include="Areas\Admin\Content\examples\thumb-60\Thumbs.db" />
-    <Content Include="Areas\Admin\Content\examples\Thumbs.db" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\Admin\Content\fonts\combine_fonts.eot" />
