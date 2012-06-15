@@ -2282,9 +2282,7 @@
     <Content Include="Areas\Admin\Content\fonts\combine_fonts.eot" />
     <Content Include="Areas\Admin\Content\fonts\combine_fonts.ttf" />
     <Content Include="Areas\Admin\Content\fonts\combine_fonts.woff" />
-    <Content Include="Areas\Admin\Content\fonts\font-awesome\.DS_Store" />
     <Content Include="Areas\Admin\Content\fonts\font-awesome\.gitignore" />
-    <Content Include="Areas\Admin\Content\fonts\font-awesome\css\.DS_Store" />
     <Content Include="Areas\Admin\Content\fonts\font-awesome\docs\assets\font\fontawesome-webfont.eot" />
     <Content Include="Areas\Admin\Content\fonts\font-awesome\docs\assets\font\fontawesome-webfont.svgz" />
     <Content Include="Areas\Admin\Content\fonts\font-awesome\docs\assets\font\fontawesome-webfont.ttf" />
