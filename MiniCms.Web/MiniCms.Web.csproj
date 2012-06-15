@@ -2271,24 +2271,12 @@
     <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Areas\Admin\Content\img\example-sites\Thumbs.db" />
-    <Content Include="Areas\Admin\Content\img\examples\Thumbs.db" />
-    <Content Include="Areas\Admin\Content\img\glyphicons\Thumbs.db" />
-    <Content Include="Areas\Admin\Content\img\Thumbs.db" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Areas\Admin\Content\plugins\colorpicker\img\Thumbs.db" />
     <Content Include="Areas\Admin\Content\plugins\colorpicker\less\colorpicker.less" />
     <Content Include="Areas\Admin\Content\plugins\datepicker\less\datepicker.less" />
     <Content Include="Areas\Admin\Content\plugins\plupload\examples\dump.php" />
     <Content Include="Areas\Admin\Content\plugins\plupload\examples\jquery\s3.php" />
     <Content Include="Areas\Admin\Content\plugins\plupload\examples\upload.php" />
-    <Content Include="Areas\Admin\Content\plugins\plupload\js\jquery.plupload.queue\img\Thumbs.db" />
     <Content Include="Areas\Admin\Content\plugins\plupload\readme.md" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Areas\Admin\Content\examples\thumb-450\Thumbs.db" />
-    <Content Include="Areas\Admin\Content\examples\thumb-60\Thumbs.db" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\Admin\Content\fonts\combine_fonts.eot" />
