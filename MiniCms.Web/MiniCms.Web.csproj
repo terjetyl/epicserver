@@ -50,17 +50,17 @@
     <Reference Include="ActionMailer.Net.Mvc">
       <HintPath>..\packages\ActionMailer.0.7.0\lib\Net40\ActionMailer.Net.Mvc.dll</HintPath>
     </Reference>
-    <Reference Include="AjaxMin, Version=4.52.4518.14738, Culture=neutral, PublicKeyToken=21ef50ce11b5d80f, processorArchitecture=MSIL">
+    <Reference Include="AjaxMin, Version=4.55.4545.19776, Culture=neutral, PublicKeyToken=21ef50ce11b5d80f, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\AjaxMin.4.52.4518.14738\lib\net20\AjaxMin.dll</HintPath>
+      <HintPath>..\packages\AjaxMin.4.55.4545.19776\lib\net20\AjaxMin.dll</HintPath>
     </Reference>
-    <Reference Include="Autofac, Version=2.6.1.841, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+    <Reference Include="Autofac, Version=2.6.2.859, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Autofac.2.6.1.841\lib\NET40\Autofac.dll</HintPath>
+      <HintPath>..\packages\Autofac.2.6.2.859\lib\NET40\Autofac.dll</HintPath>
     </Reference>
-    <Reference Include="Autofac.Configuration, Version=2.6.1.841, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+    <Reference Include="Autofac.Configuration, Version=2.6.2.859, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Autofac.2.6.1.841\lib\NET40\Autofac.Configuration.dll</HintPath>
+      <HintPath>..\packages\Autofac.2.6.2.859\lib\NET40\Autofac.Configuration.dll</HintPath>
     </Reference>
     <Reference Include="Cassette, Version=1.2.1.30492, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -87,14 +87,20 @@
     <Reference Include="Glimpse.Mvc3">
       <HintPath>..\packages\Glimpse.Mvc3.0.87\lib\net40\Glimpse.Mvc3.dll</HintPath>
     </Reference>
-    <Reference Include="Google.GData.Client">
-      <HintPath>..\packages\Google.GData.Client.1.9.0.0\lib\Google.GData.Client.dll</HintPath>
+    <Reference Include="Google.GData.AccessControl">
+      <HintPath>..\packages\Google.GData.AccessControl.2.1.0.0\lib\Google.GData.AccessControl.dll</HintPath>
     </Reference>
-    <Reference Include="Google.GData.Documents">
-      <HintPath>..\packages\Google.GData.Documents.1.9.0.0\lib\Google.GData.Documents.dll</HintPath>
+    <Reference Include="Google.GData.Client, Version=2.1.0.0, Culture=neutral, PublicKeyToken=04a59ca9b0273830, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Google.GData.Client.2.1.0.0\lib\Google.GData.Client.dll</HintPath>
     </Reference>
-    <Reference Include="Google.GData.Extensions">
-      <HintPath>..\packages\Google.GData.Extensions.1.9.0.0\lib\Google.GData.Extensions.dll</HintPath>
+    <Reference Include="Google.GData.Documents, Version=2.1.0.0, Culture=neutral, PublicKeyToken=e4daaad656f19bb9, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Google.GData.Documents.2.1.0.0\lib\Google.GData.Documents.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.GData.Extensions, Version=2.1.0.0, Culture=neutral, PublicKeyToken=0b4c5df2ebf20876, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Google.GData.Extensions.2.1.0.0\lib\Google.GData.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="GoogleMaps.LocationServices, Version=0.1.4485.31379, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -147,8 +153,9 @@
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
     </Reference>
-    <Reference Include="MiniProfiler">
-      <HintPath>..\packages\MiniProfiler.2.0.1\lib\net40\MiniProfiler.dll</HintPath>
+    <Reference Include="MiniProfiler, Version=2.0.2.0, Culture=neutral, PublicKeyToken=b44f9351044011a3, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\MiniProfiler.2.0.2\lib\net40\MiniProfiler.dll</HintPath>
     </Reference>
     <Reference Include="MvcHaack.Ajax">
       <HintPath>..\packages\MvcHaack.Ajax.1.1\lib\net40\MvcHaack.Ajax.dll</HintPath>
@@ -165,13 +172,13 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Nancy.Hosting.Aspnet.0.11.0\lib\net40\Nancy.Hosting.Aspnet.dll</HintPath>
     </Reference>
-    <Reference Include="Newtonsoft.Json, Version=4.0.8.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Newtonsoft.Json.4.0.8\lib\net40\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\packages\Newtonsoft.Json.4.5.7\lib\net40\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="Ninject, Version=3.0.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Ninject.3.0.0.15\lib\net40\Ninject.dll</HintPath>
+      <HintPath>..\packages\Ninject.3.0.1.10\lib\net40\Ninject.dll</HintPath>
     </Reference>
     <Reference Include="Ninject.Extensions.ChildKernel, Version=3.0.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -203,47 +210,36 @@
     <Reference Include="SassAndCoffee.Ruby">
       <HintPath>..\packages\SassAndCoffee.Ruby.2.0.2.0\lib\net40-Client\SassAndCoffee.Ruby.dll</HintPath>
     </Reference>
-    <Reference Include="SignalR">
-      <HintPath>..\packages\SignalR.Server.0.4.0.0\lib\net40\SignalR.dll</HintPath>
+    <Reference Include="SignalR, Version=0.5.1.10615, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\SignalR.Server.0.5.1.1\lib\net40\SignalR.dll</HintPath>
     </Reference>
-    <Reference Include="SignalR.Hosting.AspNet">
-      <HintPath>..\packages\SignalR.Hosting.AspNet.0.4.0.0\lib\net40\SignalR.Hosting.AspNet.dll</HintPath>
+    <Reference Include="SignalR.Hosting.AspNet, Version=0.5.1.10610, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\SignalR.Hosting.AspNet.0.5.1\lib\net40\SignalR.Hosting.AspNet.dll</HintPath>
+    </Reference>
+    <Reference Include="SignalR.Hosting.Common">
+      <HintPath>..\packages\SignalR.Hosting.Common.0.5.1\lib\net40\SignalR.Hosting.Common.dll</HintPath>
     </Reference>
     <Reference Include="Simple.ImageResizer">
       <HintPath>..\packages\Simple.ImageResizer.2.0.0\lib\Simple.ImageResizer.dll</HintPath>
     </Reference>
     <Reference Include="System.Data.Entity" />
-    <Reference Include="System.Json, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <Private>True</Private>
-      <HintPath>..\packages\System.Json.4.0.20126.16343\lib\net40\System.Json.dll</HintPath>
-    </Reference>
     <Reference Include="System.Net.Http, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <Private>True</Private>
-      <HintPath>..\packages\System.Net.Http.2.0.20126.16343\lib\net40\System.Net.Http.dll</HintPath>
+      <HintPath>..\packages\Microsoft.Net.Http.2.0.20505.0\lib\net40\System.Net.Http.dll</HintPath>
     </Reference>
     <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <Private>True</Private>
-      <HintPath>..\packages\System.Net.Http.Formatting.4.0.20126.16343\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.20505.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
     </Reference>
     <Reference Include="System.Net.Http.WebRequest, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <Private>True</Private>
-      <HintPath>..\packages\System.Net.Http.2.0.20126.16343\lib\net40\System.Net.Http.WebRequest.dll</HintPath>
+      <HintPath>..\packages\Microsoft.Net.Http.2.0.20505.0\lib\net40\System.Net.Http.WebRequest.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
-      <HintPath>..\packages\AspNetWebPages.Core.2.0.20126.16343\lib\net40\System.Web.Helpers.dll</HintPath>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20505.0\lib\net40\System.Web.Helpers.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <Private>True</Private>
-      <HintPath>..\packages\AspNetWebApi.Core.4.0.20126.16343\lib\net40\System.Web.Http.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.Http.Common, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <Private>True</Private>
-      <HintPath>..\packages\System.Web.Http.Common.4.0.20126.16343\lib\net40\System.Web.Http.Common.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <Private>True</Private>
-      <HintPath>..\packages\AspNetWebApi.4.0.20126.16343\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.20505.0\lib\net40\System.Web.Http.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -254,29 +250,32 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.20505.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
-      <HintPath>..\packages\AspNetMvc.4.0.20126.16343\lib\net40\System.Web.Mvc.dll</HintPath>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.20505.0\lib\net40\System.Web.Mvc.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\AspNetRazor.Core.2.0.20126.16343\lib\net40\System.Web.Razor.dll</HintPath>
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.20505.0\lib\net40\System.Web.Razor.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
-      <HintPath>..\packages\AspNetWebPages.Core.2.0.20126.16343\lib\net40\System.Web.WebPages.dll</HintPath>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20505.0\lib\net40\System.Web.WebPages.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.WebPages.Administration, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
-      <HintPath>..\packages\AspNetWebPages.2.0.20126.16343\lib\net40\System.Web.WebPages.Administration.dll</HintPath>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.Administration.2.0.20505.0\lib\net40\System.Web.WebPages.Administration.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
-      <HintPath>..\packages\AspNetWebPages.Core.2.0.20126.16343\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20505.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
-      <HintPath>..\packages\AspNetWebPages.Core.2.0.20126.16343\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20505.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
@@ -287,16 +286,16 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
-    <Reference Include="Thinktecture.Web.Http">
-      <HintPath>..\packages\Thinktecture.Web.Http.0.1.0.0\lib\net40\Thinktecture.Web.Http.dll</HintPath>
-    </Reference>
-    <Reference Include="WebActivator">
-      <HintPath>..\packages\WebActivator.1.5\lib\net40\WebActivator.dll</HintPath>
+    <Reference Include="WebActivator, Version=1.5.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\WebActivator.1.5.1\lib\net40\WebActivator.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\MiniProfiler.cs" />
     <Compile Include="App_Start\NinjectWebCommon.cs" />
+    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\DashboardController.cs" />
     <Compile Include="CassetteConfiguration.cs" />
     <Compile Include="Code\ExtensionMethods\FilesystemExtensions.cs" />
     <Compile Include="Code\ExtensionMethods\HttpResponseExtensions.cs" />
@@ -334,7 +333,7 @@
     <Compile Include="Models\SendNewsletterViewModel.cs" />
     <Compile Include="Modules\NancyModule.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\AdminOldController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Code\ExtensionMethods\HttpPostedFileBaseExtensions.cs" />
@@ -827,8 +826,11 @@
     <Content Include="Scripts\jquery.globalize\cultures\globalize.culture.zu.js" />
     <Content Include="Scripts\jquery.globalize\cultures\globalize.cultures.js" />
     <Content Include="Scripts\jquery.globalize\globalize.js" />
+    <Content Include="Scripts\jquery.signalR-0.5.1.js" />
+    <Content Include="Scripts\jquery.signalR-0.5.1.min.js">
+      <DependentUpon>jquery.signalR-0.5.1.js</DependentUpon>
+    </Content>
     <Content Include="Scripts\jquery.signalR.js" />
-    <Content Include="Scripts\jquery.signalR.min.js" />
     <Content Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
@@ -1172,6 +1174,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\Images\" />
+    <Folder Include="Areas\Admin\Models\" />
+    <Folder Include="Areas\Admin\Views\Shared\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -1303,56 +1307,140 @@
     <Content Include="Views\Shared\_HardCodedMenu.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Shared\_MINIPROFILER UPDATED Layout.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Views\Settings\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\News\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Content\less\accordion.less" />
-    <None Include="Content\less\alerts.less" />
-    <None Include="Content\less\bootstrap.less" />
-    <None Include="Content\less\breadcrumbs.less" />
-    <None Include="Content\less\button-groups.less" />
-    <None Include="Content\less\buttons.less" />
-    <None Include="Content\less\carousel.less" />
-    <None Include="Content\less\close.less" />
-    <None Include="Content\less\code.less" />
-    <None Include="Content\less\component-animations.less" />
-    <None Include="Content\less\dropdowns.less" />
-    <None Include="Content\less\forms.less" />
-    <None Include="Content\less\grid.less" />
-    <None Include="Content\less\hero-unit.less" />
-    <None Include="Content\less\labels-badges.less" />
-    <None Include="Content\less\layouts.less" />
-    <None Include="Content\less\mixins.less" />
-    <None Include="Content\less\modals.less" />
-    <None Include="Content\less\navbar.less" />
-    <None Include="Content\less\navs.less" />
-    <None Include="Content\less\pager.less" />
-    <None Include="Content\less\pagination.less" />
-    <None Include="Content\less\popovers.less" />
-    <None Include="Content\less\progress-bars.less" />
-    <None Include="Content\less\reset.less" />
-    <None Include="Content\less\responsive-1200px-min.less" />
-    <None Include="Content\less\responsive-767px-max.less" />
-    <None Include="Content\less\responsive-768px-979px.less" />
-    <None Include="Content\less\responsive-navbar.less" />
-    <None Include="Content\less\responsive-utilities.less" />
-    <None Include="Content\less\responsive.less" />
-    <None Include="Content\less\scaffolding.less" />
-    <None Include="Content\less\sprites.less" />
-    <None Include="Content\less\tables.less" />
-    <None Include="Content\less\thumbnails.less" />
-    <None Include="Content\less\tooltip.less" />
-    <None Include="Content\less\type.less" />
-    <None Include="Content\less\utilities.less" />
-    <None Include="Content\less\variables.less" />
-    <None Include="Content\less\wells.less" />
     <Content Include="Views\Home\SignalR.cshtml" />
+    <Content Include="Views\Shared\_MINIPROFILER UPDATED Layout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\less\wells.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\less\variables.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\less\utilities.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\less\type.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\less\tooltip.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\less\thumbnails.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\less\tables.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\less\sprites.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\less\scaffolding.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\less\responsive-utilities.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\less\responsive-navbar.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\less\responsive-768px-979px.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\less\responsive-767px-max.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\less\responsive-1200px-min.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\less\responsive.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\less\reset.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\less\progress-bars.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\less\popovers.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\less\pagination.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\less\pager.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\less\navs.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\less\navbar.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\less\modals.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\less\mixins.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\less\layouts.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\less\labels-badges.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\less\hero-unit.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\less\grid.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\less\forms.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\less\dropdowns.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\less\component-animations.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\less\code.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\less\close.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\less\carousel.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\less\buttons.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\less\button-groups.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\less\breadcrumbs.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\less\bootstrap.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\less\alerts.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\less\accordion.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Views\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Views\Dashboard\Index.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
@@ -27,18 +26,18 @@ namespace MiniCms.Web.Controllers.api
                                                });
         }
 
-        public HttpResponseMessage<NewsletterSubscriber> Post(NewsletterSubscriber newsletterSubscriber)
+        public HttpResponseMessage Post(NewsletterSubscriber newsletterSubscriber)
         {
             var subscriber = _newsletterSubscriberRepository.FindByEmail(newsletterSubscriber.Email);
             if (subscriber != null)
-                return new HttpResponseMessage<NewsletterSubscriber>(newsletterSubscriber, HttpStatusCode.Found);
+                return new HttpResponseMessage(HttpStatusCode.Found);
 
             _newsletterSubscriberRepository.Save(new Model.Entities.NewsletterSubscriber
             {
                 Email = newsletterSubscriber.Email,
                 Name = newsletterSubscriber.Name
             });
-            return new HttpResponseMessage<NewsletterSubscriber>(newsletterSubscriber, HttpStatusCode.Created);
+            return new HttpResponseMessage(HttpStatusCode.Created);
         }
     }
 }

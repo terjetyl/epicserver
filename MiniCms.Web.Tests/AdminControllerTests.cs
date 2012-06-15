@@ -14,7 +14,7 @@ namespace MiniCms.Web.Tests
             var userRepositoryMock = new Mock<IUserRepository>();
             var blogPostRepositoryMock = new Mock<IBlogPostRepository>();
             
-            var adminController = new AdminController(blogRepositoryMock.Object, userRepositoryMock.Object, blogPostRepositoryMock.Object);
+            var adminController = new AdminOldController(blogRepositoryMock.Object, userRepositoryMock.Object, blogPostRepositoryMock.Object);
             
             var viewResult = adminController.Index() as System.Web.Mvc.ViewResult;
 
