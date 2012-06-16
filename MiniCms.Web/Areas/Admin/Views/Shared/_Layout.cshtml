@@ -12,15 +12,14 @@
     Bundles.Reference("Areas/Admin/Content/css/bootstrap-responsive.css");
 
     Bundles.Reference("Scripts/jquery-1.7.2.js");
+    Bundles.Reference("Scripts/bootstrap.js");
+    
+    Bundles.Reference("Areas/Admin/Content/plugins/wysiwyg/wysihtml5.js");
     Bundles.Reference("Areas/Admin/Content/plugins/wysiwyg/bootstrap-wysihtml5.js");
     Bundles.Reference("Areas/Admin/Content/plugins/datepicker/js/bootstrap-datepicker.js");
     Bundles.Reference("Areas/Admin/Content/plugins/colorpicker/js/bootstrap-colorpicker.js");
-    Bundles.Reference("Areas/Admin/Content/plugins/plupload/js/plupload.full.js");
-    Bundles.Reference("Areas/Admin/Content/plugins/plupload/js/jquery.plupload.queue/jquery.plupload.queue.js");
-    Bundles.Reference("Areas/Admin/Content/plugins/wysiwyg/wysihtml5.js");
-    Bundles.Reference("Areas/Admin/Scripts/demo.js");
+    Bundles.Reference("http://bp.yahooapis.com/2.4.21/browserplus-min.js");
     Bundles.Reference("Areas/Admin/Scripts/google-chart-index.js");
-    Bundles.Reference("Scripts/bootstrap.js");
 }
 
 <!DOCTYPE html>
@@ -337,9 +336,7 @@
             <!-- sidebar -->
 
             <!-- main content -->
-            <div id="main_content" class="span10">
-                @RenderBody()
-            </div>
+            @RenderBody()
             <!-- main content -->
 
         </div>
@@ -351,9 +348,11 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://www.google.com/jsapi"></script>
-    <script type="text/javascript" src="http://bp.yahooapis.com/2.4.21/browserplus-min.js"></script>
     
     @Bundles.RenderScripts()
-
+    
+    <script type="text/javascript" src="/areas/Admin/Content/plugins/plupload/js/plupload.full.js"></script>
+    <script type="text/javascript" src="/areas/Admin/Content/plugins/plupload/js/jquery.plupload.queue/jquery.plupload.queue.js"></script>
+    <script type="text/javascript" src="/areas/Admin/Scripts/demo.js"></script>
 </body>
 </html>

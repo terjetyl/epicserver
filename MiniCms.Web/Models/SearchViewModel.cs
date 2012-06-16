@@ -5,6 +5,6 @@ namespace MiniCms.Web.Models
 {
     public class SearchViewModel
     {
-        public IEnumerable<BlogPostModel> BlogPosts { get; set; }
+        public IEnumerable<Article> BlogPosts { get; set; }
     }
 }

@@ -27,11 +27,11 @@ namespace MiniCms.Web.Models
     {
         public Month()
         {
-            Posts = new List<BlogPostModel>();
+            Posts = new List<Article>();
         }
         public int Nr { get; set; }
         public string Name { get; set; }
-        public List<BlogPostModel> Posts { get; set; }
+        public List<Article> Posts { get; set; }
         public int Count { get; set; }
     }
 }

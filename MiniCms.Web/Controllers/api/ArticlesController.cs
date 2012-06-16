@@ -8,11 +8,11 @@ using MiniCms.Web.Models.Entities;
 
 namespace MiniCms.Web.Controllers.api
 {
-    public class NewsController : ApiController
+    public class ArticlesController : BaseApiController
     {
         private readonly IBlogPostRepository _blogPostRepository;
-    
-        public NewsController(IBlogPostRepository blogPostRepository)
+
+        public ArticlesController(IBlogPostRepository blogPostRepository)
         {
             _blogPostRepository = blogPostRepository;
         }

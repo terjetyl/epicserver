@@ -19,8 +19,8 @@ namespace MiniCms.Web
             // So you probably want to tweak these defaults!
             //bundles.AddPerIndividualFile<StylesheetBundle>("Content");
             bundles.AddPerIndividualFile<ScriptBundle>("Scripts");
-            bundles.AddPerSubDirectory<ScriptBundle>("Areas/Admin/Content");
-            bundles.AddPerSubDirectory<ScriptBundle>("Areas/Admin/Scripts");
+            bundles.AddPerIndividualFile<ScriptBundle>("Areas/Admin/Content");
+            bundles.AddPerIndividualFile<ScriptBundle>("Areas/Admin/Scripts");
 
             bundles.Add<StylesheetBundle>("Content/bootstrap.css");
             bundles.Add<StylesheetBundle>("Content/bootstrap-responsive.css");

@@ -5,6 +5,6 @@ namespace MiniCms.Web.Models
 {
     public class HomeIndexModel
     {
-        public IEnumerable<BlogPostModel> Posts { get; set; }
+        public IEnumerable<Article> Posts { get; set; }
     }
 }

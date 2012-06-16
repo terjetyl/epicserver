@@ -73,7 +73,7 @@ namespace MiniCms.Web.Code.Filters
             //    {
             //        var posts =
             //            blogposts.Where(o => o.DateCreated.Year == year.Name && o.DateCreated.Month == month.Nr);
-            //        month.Posts.AddRange(posts.Select(o => new BlogPostModel { Title = o.Title, Id = o.Id }));
+            //        month.Posts.AddRange(posts.Select(o => new Article { Title = o.Title, Id = o.Id }));
             //        month.Count = posts.Count();
             //        year.Months.Add(month);
             //    }

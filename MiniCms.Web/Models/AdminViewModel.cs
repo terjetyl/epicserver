@@ -6,6 +6,6 @@ namespace MiniCms.Web.Models
     public class AdminViewModel
     {
         public BlogModel BlogModel { get; set; }
-        public IEnumerable<BlogPostModel> Posts { get; set; }
+        public IEnumerable<Article> Posts { get; set; }
     }
 }

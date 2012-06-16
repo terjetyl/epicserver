@@ -39,7 +39,7 @@ namespace MiniCms.Web.Controllers
         {
             var viewModel = new EditBlogPostViewModel
                                 {
-                                    BlogPost = new BlogPostModel(),
+                                    BlogPost = new Article(),
                                     EnableTags = _featureService.EnableTaggableContent.IsEnabledForUser(LoggedInUser)
                                 };
             return View(viewModel);

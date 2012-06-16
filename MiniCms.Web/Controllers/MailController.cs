@@ -33,7 +33,7 @@ namespace MiniCms.Web.Controllers
 
             From = blog.Email;
             Subject = newsletter.Title;
-            return Email("SendNewsletter", new BlogPostModel
+            return Email("SendNewsletter", new Article
             {
                 Title = newsletter.Title,
                 ImageUrl = newsletter.ImageUrl,

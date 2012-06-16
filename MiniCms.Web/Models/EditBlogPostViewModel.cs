@@ -4,7 +4,7 @@ namespace MiniCms.Web.Models
 {
     public class EditBlogPostViewModel
     {
-        public BlogPostModel BlogPost { get; set; }
+        public Article BlogPost { get; set; }
         public bool EnableTags { get; set; }
     }
 }

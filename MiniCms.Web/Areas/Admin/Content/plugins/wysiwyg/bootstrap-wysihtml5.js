@@ -1,4 +1,6 @@
-!function($, wysi) {
+/// <reference path="wysihtml5.js" />
+
+!function ($, wysi) {
 	"use strict"
 	
 	var templates = {

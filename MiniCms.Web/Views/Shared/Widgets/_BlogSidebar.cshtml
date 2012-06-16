@@ -89,7 +89,7 @@
                                                                                                                                      <a class='post-count-link' href='/news/search?month=@month.Name'>
                                                                                                                                                                                             @month.Name</a> <span class='post-count' dir='ltr'>(@month.Count)</span>
                                                         <ul class='posts'>
-                                                            @foreach (BlogPostModel post in month.Posts)
+                                                            @foreach (Article post in month.Posts)
                                                             {
                                                                 <li>@Html.ActionLink(post.Title, "Details", "News")</li>
                                                             }

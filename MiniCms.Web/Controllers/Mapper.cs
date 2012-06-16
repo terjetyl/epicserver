@@ -40,30 +40,30 @@ namespace MiniCms.Web.Controllers
             };
         }
 
-        public static BlogPost Map(BlogPostModel blogPostModel)
+        public static BlogPost Map(Article article)
         {
             return new BlogPost
             {
-                Author = blogPostModel.Author,
-                Body = blogPostModel.Body,
+                Author = article.Author,
+                Body = article.Body,
                 DateCreated = DateTime.Now,
                 DatePublished = DateTime.Now,
-                Title = blogPostModel.Title,
-                Id = blogPostModel.Id,
-                Tags = !string.IsNullOrWhiteSpace(blogPostModel.Tags)
-                 ? blogPostModel.Tags.Split(',').Select(o => o.Trim()).ToList()
+                Title = article.Title,
+                Id = article.Id,
+                Tags = !string.IsNullOrWhiteSpace(article.Tags)
+                 ? article.Tags.Split(',').Select(o => o.Trim()).ToList()
                  : new List<string>()
             };
         }
 
-        public static IEnumerable<BlogPostModel> Map(IEnumerable<BlogPost> blogPosts)
+        public static IEnumerable<Article> Map(IEnumerable<BlogPost> blogPosts)
         {
             return blogPosts.Select(Map);
         } 
 
-        public static BlogPostModel Map(BlogPost blogPost)
+        public static Article Map(BlogPost blogPost)
         {
-            return new BlogPostModel
+            return new Article
             {
                 Author = blogPost.Author,
                 Body = blogPost.Body,

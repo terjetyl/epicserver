@@ -3,8 +3,6 @@ using MiniCms.Model;
 using MiniCms.Model.Repositories;
 using MiniCms.Services;
 using MiniCms.Services.RavenDb;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 
 [assembly: WebActivator.PreApplicationStartMethod(typeof(MiniCms.Web.App_Start.NinjectWebCommon), "Start")]
 [assembly: WebActivator.ApplicationShutdownMethodAttribute(typeof(MiniCms.Web.App_Start.NinjectWebCommon), "Stop")]
@@ -51,8 +49,11 @@ namespace MiniCms.Web.App_Start
             kernel.Load(new Ninject.Web.Mvc.MvcModule());
             kernel.Bind<Func<IKernel>>().ToMethod(ctx => () => new Bootstrapper().Kernel);
             kernel.Bind<IHttpModule>().To<HttpApplicationInitializationHttpModule>();
-            var config = GlobalConfiguration.Configuration;
             RegisterServices(kernel);
+
+            // Set Web API Resolver
+            GlobalConfiguration.Configuration.DependencyResolver = new NinjectDependencyResolver(kernel);
+
             return kernel;
         }
 

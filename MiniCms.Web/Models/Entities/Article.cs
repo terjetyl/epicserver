@@ -6,7 +6,7 @@ using MiniCms.Web.Code.Helpers;
 
 namespace MiniCms.Web.Models.Entities
 {
-    public class BlogPostModel
+    public class Article
     {
         public int Id { get; set; }
         public string Title { get; set; }

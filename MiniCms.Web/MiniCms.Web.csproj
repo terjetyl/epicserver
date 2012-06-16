@@ -191,9 +191,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Ninject.MVC3.3.0.0.6\lib\net40-full\Ninject.Web.Mvc.dll</HintPath>
     </Reference>
-    <Reference Include="Ninject.Web.WebApi">
-      <HintPath>..\packages\Ninject.Web.WebApi.3.0.0.2\lib\net40-full\Ninject.Web.WebApi.dll</HintPath>
-    </Reference>
     <Reference Include="NuGet.Core, Version=1.6.30117.9648, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
       <HintPath>..\packages\NuGet.Core.1.6.2\lib\net40\NuGet.Core.dll</HintPath>
@@ -312,8 +309,14 @@
     <Compile Include="Code\Helpers\UrlHelper.cs" />
     <Compile Include="Code\MvcResults\DynamicImageResult.cs" />
     <Compile Include="Code\MvcResults\ImageFileResult.cs" />
+    <Compile Include="Code\NinjectDependencyScope.cs" />
+    <Compile Include="Controllers\api\ArticlesController.cs" />
+    <Compile Include="Controllers\api\BaseApiController.cs" />
+    <Compile Include="Controllers\api\ImagesController.cs" />
+    <Compile Include="Controllers\api\MediaController.cs" />
     <Compile Include="Controllers\api\NewslettersController.cs" />
     <Compile Include="Controllers\api\NewsletterSubscribersController.cs" />
+    <Compile Include="Controllers\api\VideoController.cs" />
     <Compile Include="Controllers\FeaturesController.cs" />
     <Compile Include="Controllers\FileController.cs" />
     <Compile Include="Controllers\api\HomeApiController.cs" />
@@ -352,7 +355,7 @@
     <Compile Include="Models\Entities\Address.cs" />
     <Compile Include="Models\Entities\GeoPoint.cs" />
     <Compile Include="Models\Entities\BlogModel.cs" />
-    <Compile Include="Models\Entities\BlogPostModel.cs" />
+    <Compile Include="Models\Entities\Article.cs" />
     <Compile Include="Models\FileAttribute.cs" />
     <Compile Include="Models\HomeIndexModel.cs" />
     <Compile Include="Models\MenuModel.cs" />
@@ -2349,6 +2352,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\Admin\Views\Articles\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Views\Media\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Views\Media\Create.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Views\Articles\Create.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

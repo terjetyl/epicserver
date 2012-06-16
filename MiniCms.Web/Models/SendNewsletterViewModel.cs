@@ -6,7 +6,7 @@ namespace MiniCms.Web.Models
 {
     public class SendNewsletterViewModel
     {
-        public BlogPostModel BlogPost { get; set; }
+        public Article BlogPost { get; set; }
         public IEnumerable<NewsletterSubscriber> Subscribers { get; set; }
     }
 }

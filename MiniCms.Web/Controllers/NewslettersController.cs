@@ -37,7 +37,7 @@ namespace MiniCms.Web.Controllers
             if(blogpost > 0)
             {
                 var blogPost = _blogPostRepository.Get(blogpost);
-                viewModel.BlogPost = new BlogPostModel
+                viewModel.BlogPost = new Article
                                          {
                                              Title = blogPost.Title,
                                              ImageUrl = blogPost.ImageUrl,
