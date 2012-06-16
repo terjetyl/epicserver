@@ -58,8 +58,8 @@ $(document).ready(function() {
 	$(function() {
 		$("#uploader").pluploadQueue({
 			// General settings
-			runtimes : 'gears,flash,silverlight,browserplus,html5',
-			url : '../plugins/plupload/examples/upload.php',
+		    runtimes: 'html5,flash,silverlight,browserplus',
+			url : '/admin/media/upload',
 			max_file_size : '10mb',
 			chunk_size : '1mb',
 			unique_names : true,
@@ -74,10 +74,10 @@ $(document).ready(function() {
 			],
 
 			// Flash settings
-			flash_swf_url : '../plugins/plupload/js/plupload.flash.swf',
+			flash_swf_url : '/scripts/plupload/plupload.flash.swf',
 
 			// Silverlight settings
-			silverlight_xap_url : '../plugins/plupload/js/plupload.silverlight.xap'
+			silverlight_xap_url: '/scripts/plupload/plupload.silverlight.xap'
 		});
 
 		// Client side form validation

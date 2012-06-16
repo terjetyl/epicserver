@@ -19,7 +19,8 @@
     Bundles.Reference("Areas/Admin/Content/plugins/datepicker/js/bootstrap-datepicker.js");
     Bundles.Reference("Areas/Admin/Content/plugins/colorpicker/js/bootstrap-colorpicker.js");
     Bundles.Reference("http://bp.yahooapis.com/2.4.21/browserplus-min.js");
-    Bundles.Reference("Areas/Admin/Scripts/google-chart-index.js");
+    //Bundles.Reference("Areas/Admin/Scripts/google-chart.js");
+    //Bundles.Reference("Areas/Admin/Scripts/google-chart-index.js");
 }
 
 <!DOCTYPE html>
@@ -273,8 +274,8 @@
                         <div id="pagesb" class="accordion-body collapse">
                             <div class="accordion-inner">
                                 <ul class="nav nav-list">
-                                    <li><a href="pages.html"><i class="icon-large icon-th"></i>List</a></li>
-                                    <li><a href="add-new-page.html"><i class="icon-large icon-th"></i>Add New</a></li>
+                                    <li><a href="/admin/pages"><i class="icon-large icon-th"></i>List</a></li>
+                                    <li><a href="/admin/pages/create"><i class="icon-large icon-th"></i>Add New</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -290,9 +291,9 @@
                         <div id="reportsb" class="accordion-body collapse">
                             <div class="accordion-inner">
                                 <ul class="nav nav-list">
-                                    <li><a href="field-reports.html"><i class="icon-large icon-th"></i>List</a></li>
-                                    <li><a href="add-new-field-report.html"><i class="icon-large icon-th"></i>Add New</a></li>
-                                    <li><a href="field-report-category.html"><i class="icon-large icon-th"></i>Categories</a></li>
+                                    <li><a href="/admin/reports"><i class="icon-large icon-th"></i>List</a></li>
+                                    <li><a href="/admin/reports/create"><i class="icon-large icon-th"></i>Add New</a></li>
+                                    <li><a href="/admin/reports/categories"><i class="icon-large icon-th"></i>Categories</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -308,8 +309,8 @@
                         <div id="mediasb" class="accordion-body collapse">
                             <div class="accordion-inner">
                                 <ul class="nav nav-list">
-                                    <li><a href="media-library.html"><i class="icon-large icon-th"></i>Library</a></li>
-                                    <li><a href="add-new-media.html"><i class="icon-large icon-th"></i>Add New</a></li>
+                                    <li><a href="/admin/media"><i class="icon-large icon-th"></i>Library</a></li>
+                                    <li><a href="/admin/media/create"><i class="icon-large icon-th"></i>Add New</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -325,7 +326,7 @@
                         <div id="commentsb" class="accordion-body collapse">
                             <div class="accordion-inner">
                                 <ul class="nav nav-list">
-                                    <li><a href="comments.html"><i class="icon-large icon-th"></i>Comments</a></li>
+                                    <li><a href="/admin/comments"><i class="icon-large icon-th"></i>Comments</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -347,12 +348,12 @@
 
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://www.google.com/jsapi"></script>
+    @*<script src="https://www.google.com/jsapi"></script>*@
     
     @Bundles.RenderScripts()
     
-    <script type="text/javascript" src="/areas/Admin/Content/plugins/plupload/js/plupload.full.js"></script>
-    <script type="text/javascript" src="/areas/Admin/Content/plugins/plupload/js/jquery.plupload.queue/jquery.plupload.queue.js"></script>
+    <script type="text/javascript" src="/scripts/plupload/plupload.full.js"></script>
+    <script type="text/javascript" src="/scripts/plupload/jquery.plupload.queue/jquery.plupload.queue.js"></script>
     <script type="text/javascript" src="/areas/Admin/Scripts/demo.js"></script>
 </body>
 </html>

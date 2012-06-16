@@ -1,4 +1,6 @@
-google.load('visualization', '1', {'packages': ['geochart']});
+/// <reference path="google-chart.js" />
+
+google.load('visualization', '1', { 'packages': ['geochart'] });
 google.setOnLoadCallback(drawRegionsMap);
 function drawRegionsMap() {
 var data = google.visualization.arrayToDataTable([
