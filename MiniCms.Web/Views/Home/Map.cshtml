@@ -46,7 +46,8 @@
         self.hub = $.connection.locationHub;
         
         self.hub.say = function (value) {
-            alert(value.Name);
+            self.lat(value.Latitude);
+            self.lng(value.Longitude);
         };
 
         self.postlocation = function () {
