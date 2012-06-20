@@ -1,0 +1,71 @@
+﻿@{
+    ViewBag.Title = "Map";
+}
+
+<h2>Map</h2>
+
+<script src="http://maps.google.com/maps/api/js?sensor=false">
+</script>
+
+<style type="text/css">
+    #mapContainer {
+        height: 500px;
+        width: 800px;
+        border:10px solid #eaeaea;
+        float: left;
+    }
+</style>
+
+<div class="span12">
+<div id="mapContainer"></div>
+<div id="mypos" style="padding-left: 2em">
+    <h3>My position</h3>
+    Lat: <span data-bind="text: lat"></span><br />
+    Lng: <span data-bind="text: lng"></span>
+</div>
+</div>
+<script type="text/javascript">
+    var positionViewModel = function() {
+        this.lat = ko.observable();
+        this.lng = ko.observable();
+    };
+
+    var vm = new positionViewModel();
+    ko.applyBindings(vm);
+    
+    if (navigator.geolocation) {
+        
+        window.setInterval(function () {
+
+            navigator.geolocation.getCurrentPosition(function(position){
+                var latitude = position.coords.latitude;
+                var longitude = position.coords.longitude;
+                vm.lat(latitude);
+                vm.lng(longitude);
+                var coords = new google.maps.LatLng(latitude, longitude);
+        
+                var mapOptions = {
+                    zoom: 15,
+                    center: coords,
+                    mapTypeControl: true,
+                    navigationControlOptions: {
+                        style: google.maps.NavigationControlStyle.SMALL
+                    },
+                    mapTypeId: google.maps.MapTypeId.ROADMAP
+                };
+                map = new google.maps.Map(
+                    document.getElementById("mapContainer"), mapOptions
+                );
+                var marker = new google.maps.Marker({
+                    position: coords,
+                    map: map,
+                    title: "Your current location!"
+                });
+ 
+            });
+        
+        }, 5000);
+    } else {
+        alert("Geolocation API is not supported in your browser.");
+    }
+</script>
