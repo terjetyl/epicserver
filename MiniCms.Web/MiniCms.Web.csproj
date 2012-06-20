@@ -313,6 +313,7 @@
     <Compile Include="Controllers\api\ArticlesController.cs" />
     <Compile Include="Controllers\api\BaseApiController.cs" />
     <Compile Include="Controllers\api\ImagesController.cs" />
+    <Compile Include="Controllers\api\LocationController.cs" />
     <Compile Include="Controllers\api\MediaController.cs" />
     <Compile Include="Controllers\api\NewslettersController.cs" />
     <Compile Include="Controllers\api\NewsletterSubscribersController.cs" />
@@ -328,9 +329,11 @@
     <Compile Include="Controllers\ScriptController.cs" />
     <Compile Include="Controllers\SettingsController.cs" />
     <Compile Include="Controllers\TagsController.cs" />
+    <Compile Include="Hubs\LocationHub.cs" />
     <Compile Include="Models\ArchiveModel.cs" />
     <Compile Include="Models\EditBlogPostViewModel.cs" />
     <Compile Include="Models\Entities\FeatureModel.cs" />
+    <Compile Include="Models\Entities\Location.cs" />
     <Compile Include="Models\Entities\NewsletterSubscriber.cs" />
     <Compile Include="Models\Entities\TagModel.cs" />
     <Compile Include="Models\Entities\UserModel.cs" />

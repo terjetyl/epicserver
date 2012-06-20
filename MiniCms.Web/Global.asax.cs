@@ -84,7 +84,7 @@ namespace MiniCms.Web
     {
         public void Start()
         {
-            Thread thread = new Thread(Write);
+            var thread = new Thread(Write);
             thread.Start();
         }
 
