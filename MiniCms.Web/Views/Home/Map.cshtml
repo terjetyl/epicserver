@@ -10,62 +10,91 @@
 <style type="text/css">
     #mapContainer {
         height: 500px;
-        width: 800px;
-        border:10px solid #eaeaea;
+        width: 100%;
         float: left;
     }
 </style>
 
 <div class="span12">
-<div id="mapContainer"></div>
-<div id="mypos" style="padding-left: 2em">
-    <h3>My position</h3>
-    Lat: <span data-bind="text: lat"></span><br />
-    Lng: <span data-bind="text: lng"></span>
-</div>
+
+    <div id="mypos">
+        <h3>My position</h3>
+        Lat: <span data-bind="text: lat"></span>
+        <br />
+        Lng: <span data-bind="text: lng"></span>
+    </div>
+
+    <div id="mapContainer"></div>
+
 </div>
 <script type="text/javascript">
-    var positionViewModel = function() {
-        this.lat = ko.observable();
-        this.lng = ko.observable();
+
+    var positionViewModel = function (map) {
+        var self = this;
+        self.lat = ko.observable();
+        self.lng = ko.observable();
+        self.name = ko.observable("Terje");
+        self.map = map;
+
+        self.coords = ko.computed(function () {
+            return new google.maps.LatLng(self.lat(), self.lng());
+        }, self);
+
+        self.marker = ko.computed(function () {
+            return new google.maps.Marker({
+                position: self.coords(),
+                map: self.map,
+                title: self.name()
+            });
+        }, self);
+
+        self.tracklocation = ko.observable(true);
+
+        self.updateLocation = function () {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(function (position) {
+                    self.lat(position.coords.latitude);
+                    self.lng(position.coords.longitude);
+                });
+            }
+        };
+
+        self.startTracking = function () {
+            window.setInterval(function () {
+                self.updateLocation();
+            }, 5000);
+        };
     };
 
-    var vm = new positionViewModel();
-    ko.applyBindings(vm);
-    
-    if (navigator.geolocation) {
-        
-        window.setInterval(function () {
 
-            navigator.geolocation.getCurrentPosition(function(position){
-                var latitude = position.coords.latitude;
-                var longitude = position.coords.longitude;
-                vm.lat(latitude);
-                vm.lng(longitude);
-                var coords = new google.maps.LatLng(latitude, longitude);
-        
-                var mapOptions = {
-                    zoom: 15,
-                    center: coords,
-                    mapTypeControl: true,
-                    navigationControlOptions: {
-                        style: google.maps.NavigationControlStyle.SMALL
-                    },
-                    mapTypeId: google.maps.MapTypeId.ROADMAP
-                };
-                map = new google.maps.Map(
-                    document.getElementById("mapContainer"), mapOptions
-                );
-                var marker = new google.maps.Marker({
-                    position: coords,
-                    map: map,
-                    title: "Your current location!"
-                });
- 
-            });
-        
-        }, 5000);
+
+    if (navigator.geolocation) {
+
+        navigator.geolocation.getCurrentPosition(function (position) {
+            var latitude = position.coords.latitude;
+            var longitude = position.coords.longitude;
+
+            var coords = new google.maps.LatLng(latitude, longitude);
+
+            var mapOptions = {
+                zoom: 15,
+                center: coords,
+                mapTypeControl: true,
+                navigationControlOptions: {
+                    style: google.maps.NavigationControlStyle.SMALL
+                },
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+            map = new google.maps.Map(
+                document.getElementById("mapContainer"), mapOptions
+            );
+
+            var vm = new positionViewModel(map);
+            ko.applyBindings(vm);
+            vm.startTracking();
+        });
     } else {
         alert("Geolocation API is not supported in your browser.");
     }
+
 </script>
