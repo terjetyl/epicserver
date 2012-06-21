@@ -1,13 +1,14 @@
-﻿using MiniCms.Web.Models.Entities;
+﻿using System.Threading.Tasks;
+using MiniCms.Web.Models.Entities;
 using SignalR.Hubs;
 
 namespace MiniCms.Web.Hubs
 {
     public class LocationHub : Hub
     {
-        public void UpdateLocation(Location location)
+        public Task UpdateLocation(Location location)
         {
-            Clients.say(location);
+            return Clients.say(location);
         }
     }
 }

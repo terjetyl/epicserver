@@ -1,15 +1,9 @@
-﻿using System;
-using System.Threading;
-using System.Threading.Tasks;
-using System.Web.Http;
+﻿using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Routing;
 using MiniCms.Services.RavenDb;
 using MiniCms.Web.Code.Handlers;
 using MvcHaack.Ajax;
-using SignalR;
-using SignalR.Hosting.AspNet.Routing;
-using SignalR.Hubs;
 
 namespace MiniCms.Web
 {
@@ -62,39 +56,11 @@ namespace MiniCms.Web
             AreaRegistration.RegisterAllAreas();
             RegisterGlobalFilters(GlobalFilters.Filters);
 
-            RouteTable.Routes.MapConnection<MyConnection>("echo", "echo/{*operation}");
-
             RegisterRoutes(RouteTable.Routes);
 
             GlobalConfiguration.Configuration.MessageHandlers.Add(new CorsHandler());
 
             RavenInitializer.BuildIndexes();
-        }
-    }
-
-    public class MyConnection : PersistentConnection
-    {
-        protected override Task OnReceivedAsync(IRequest request, string connectionId, string data)
-        {
-            return Connection.Broadcast(data);
-        }
-    }
-
-    public class ServerTime : Hub
-    {
-        public void Start()
-        {
-            var thread = new Thread(Write);
-            thread.Start();
-        }
-
-        public void Write()
-        {
-            while (true)
-            {
-                Clients.settime(DateTime.Now.ToString());
-                Thread.Sleep(1000);
-            }
         }
     }
 }
