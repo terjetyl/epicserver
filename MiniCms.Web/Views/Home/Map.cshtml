@@ -31,12 +31,7 @@
 
 </div>
 <script type="text/javascript">
-    var connected = false;
-    $.connection.hub.start(function () {
-        console.log('connected');
-        connected = true;
-    });
-
+    
     var positionViewModel = function (map) {
         var self = this;
         self.lat = ko.observable();
@@ -46,45 +41,43 @@
         self.hub = $.connection.locationHub;
         
         self.hub.say = function (value) {
+            console.log('say');
             self.lat(value.Latitude);
             self.lng(value.Longitude);
         };
 
         self.postlocation = function () {
-            if (connected == true) {
-                $.connection.locationHub.updateLocation({ "Name": "Terje", "Latitude": self.lat(), "Longitude": self.lng() });
-            }
+            console.log('postlocation');
+            $.connection.locationHub.updateLocation({ "Name": "Terje", "Latitude": self.lat(), "Longitude": self.lng() });
         };
         self.coords = ko.computed(function () {
             return new google.maps.LatLng(self.lat(), self.lng());
         }, self);
 
         self.marker = ko.computed(function () {
-            self.postlocation();
             return new google.maps.Marker({
                 position: self.coords(),
                 map: self.map,
                 title: self.name()
             });
         }, self);
-        
-        
 
+        self.startTracking = function() {
+            setInterval(function () {
+                self.updateLocation();
+            }, 5000);
+        };
+        
         self.tracklocation = ko.observable(true);
 
         self.updateLocation = function () {
+            console.log('updateLocation');
             if (navigator.geolocation) {
                 navigator.geolocation.getCurrentPosition(function (position) {
                     self.lat(position.coords.latitude);
                     self.lng(position.coords.longitude);
                 });
             }
-        };
-
-        self.startTracking = function () {
-            window.setInterval(function () {
-                self.updateLocation();
-            }, 5000);
         };
     };
 
@@ -111,7 +104,12 @@
 
             var vm = new positionViewModel(map);
             ko.applyBindings(vm);
-            vm.startTracking();
+            
+            $.connection.hub.start().done(function () {
+                console.log('connected');
+                vm.startTracking();
+            });
+            
         });
     } else {
         alert("Geolocation API is not supported in your browser.");
