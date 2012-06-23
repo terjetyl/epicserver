@@ -1,8 +1,7 @@
 class window.Category extends Backbone.Model
-	defaults:
-		id: 0
-		name: ''
+	idAttribute: 'Id'
+	urlRoot: '/api/categories'
 
 class window.Categories extends Backbone.Collection
 	model: Category
-	localStorage: new Store("categories")
+	url: '/api/categories'

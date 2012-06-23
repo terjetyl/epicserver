@@ -13,5 +13,10 @@ namespace MiniCms.Web.Areas.Admin.Controllers
         {
             return View();
         }
+
+        public ActionResult Categories()
+        {
+            return View();
+        }
     }
 }

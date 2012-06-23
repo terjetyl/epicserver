@@ -28,5 +28,11 @@ namespace MiniCms.Web.Controllers.api
             var categories =_categoryRepository.GetAll();
             return new List<Category>(categories.Select(o => new Category{ Id = o.Id, Name = o.Name }));
         }
+
+        public HttpResponseMessage Delete(int id)
+        {
+            _categoryRepository.Delete(id);
+            return new HttpResponseMessage(HttpStatusCode.OK);
+        }
     }
 }

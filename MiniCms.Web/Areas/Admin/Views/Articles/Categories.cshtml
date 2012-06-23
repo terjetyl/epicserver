@@ -1,0 +1,120 @@
+﻿@{
+    Bundles.Reference("Areas/Admin/Scripts/app.coffee");
+}
+
+@{
+    ViewBag.Title = "Categories";
+}
+
+<div id="main_content" class="span5">
+    <div class="widget_container">
+        <div class="well nomargin">
+            <div class="navbar navbar-static navbar_as_heading">
+                <div class="navbar-inner">
+                    <div class="container" style="width: auto;">
+                        <a class="brand">Categories</a>
+                    </div>
+                </div>
+            </div>
+            <div class="subnav nobg">
+                <div class="span4">
+                    <select name="action">
+                        <option value="-1" selected="selected">Bulk Actions</option>
+                        <option value="edit">Edit</option>
+                        <option value="trash">Move to Trash</option>
+                    </select>
+                </div>
+                <div class="span2">
+                    <button class="btn btn-small btn-duadua" data-bind="click: deleteSelected">Apply</button>
+                </div>
+                <div class="span6">
+                    <form class="form-search" style="margin-bottom: 0;">
+                    <input type="text" class="4search-query" style="width: 58%;">
+                    <button type="submit" class="btn btn-small btn-duadua">Search</button>
+                    </form>
+                </div>
+            </div>
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <td>
+                            <input type="checkbox" data-bind="click: selectAll, checked: checkAll" id="chkbck"></td>
+                        <td>Name</td>
+                        <td>Description</td>
+                        <td>Slug</td>
+                        <td>Posts</td>
+                        <td></td>
+                    </tr>
+                </thead>
+                <tbody data-bind="foreach: categories">
+                    <tr>
+                        <td>
+                            <input type="checkbox" class="chkbck" data-bind="checked: selected"></td>
+                        <td data-bind="text: Name"></td>
+                        <td>&nbsp;</td>
+                        <td>breaking-news</td>
+                        <td><span class="badge badge-info">28</span></td>
+                        <td><button class="btn btn-small" data-bind="click: remove"><i class="icon-trash-empty"></i>Delete</button></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="alert alert-info" style="margin-bottom: 0;">
+                <strong>Note:</strong><br>
+                Deleting a category does not delete the posts in that category. Instead, posts that were only assigned to the deleted category are set to the category Breaking News.
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<div id="right_sidebar" class="span5">
+    <div class="widget_container">
+        <div class="well">
+            <div class="navbar navbar-static navbar_as_heading">
+                <div class="navbar-inner">
+                    <div class="container" style="width: auto;">
+                        <a class="brand">Add New Category</a>
+                    </div>
+                </div>
+            </div>
+            <form>
+            <label>Name:</label>
+            <input type="text" class="input-xlarge-fluid" placeholder="Category Name">
+            <span class="help-block">The name is how it appears on your site.</span>
+
+            <label>Slug:</label>
+            <input type="text" class="input-xlarge-fluid" placeholder="Category Slug">
+            <span class="help-block">The "slug" is the URL-friendly version of the name. It is usually all lowercase and contains only letters, numbers, and hyphens.</span>
+
+            <label>Parent:</label>
+            <select name="parent" id="parent" class="input-xlarge-fluid">
+                <option value="-1">None</option>
+                <option class="level-0" value="1">Breaking News</option>
+                <option class="level-0">Headline News</option>
+                <option class="level-0">General News</option>
+            </select>
+            <span class="help-block">Categories, unlike tags, can have a hierarchy. You might have a Jazz category, and under that have children categories for Bebop and Big Band. Totally optional.</span>
+
+            <label>Description:</label>
+            <textarea style="width: 90%; height: 90px;"></textarea>
+            <span class="help-block">The description is not prominent by default; however, some themes may show it.</span>
+
+            <button class="btn btn-duadua btn-small"><i class="icon-ok-3"></i>Add New Category</button>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        var categories = new Categories();
+        categories.fetch().success(function () {
+            var vm = new CategoriesViewModel(categories);
+            ko.applyBindings(vm);
+        });
+    });
+</script>

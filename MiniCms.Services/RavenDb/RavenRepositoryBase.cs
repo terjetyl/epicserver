@@ -24,7 +24,15 @@ namespace MiniCms.Services.RavenDb
 
         public void Delete(int id)
         {
-            throw new NotImplementedException();
+            using (var session = DocumentStore.OpenSession())
+            {
+                var item = session.Load<T>(_idPrefix + id);
+                if (item != null)
+                {
+                    session.Delete(item);
+                    session.SaveChanges();
+                }
+            }
         }
 
         public T Find(int id)

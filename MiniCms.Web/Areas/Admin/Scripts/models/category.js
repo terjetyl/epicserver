@@ -12,10 +12,9 @@
       return Category.__super__.constructor.apply(this, arguments);
     }
 
-    Category.prototype.defaults = {
-      id: 0,
-      name: ''
-    };
+    Category.prototype.idAttribute = 'Id';
+
+    Category.prototype.urlRoot = '/api/categories';
 
     return Category;
 
@@ -33,7 +32,7 @@
 
     Categories.prototype.model = Category;
 
-    Categories.prototype.localStorage = new Store("categories");
+    Categories.prototype.url = '/api/categories';
 
     return Categories;
 
