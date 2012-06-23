@@ -30,7 +30,8 @@ namespace MiniCms.Web
                 {
                     //id = @"^(\{{0,1}([0-9a-fA-F]){8}-([0-9a-fA-F]){4}-([0-9a-fA-F]){4}-([0-9a-fA-F]){4}-([0-9a-fA-F]){12}\}{0,1})$" // guid regex
                     id = @"\d+"
-                } // Parameter defaults
+                },
+                new string[] { "MiniCms.Web.Controllers" }
             );
 
             routes.MapRoute(
@@ -47,7 +48,8 @@ namespace MiniCms.Web
             routes.MapRoute(
                 "Default", // Route name
                 "{controller}/{action}/{id}", // URL with parameters
-                new { controller = "Home", action = "Index", id = UrlParameter.Optional } // Parameter defaults
+                new { controller = "Home", action = "Index", id = UrlParameter.Optional },
+                new string[] { "MiniCms.Web.Controllers" }
             );
         }
 

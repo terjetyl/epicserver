@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
-using MarkdownSharp;
 using MiniCms.Model;
 using MiniCms.Model.Repositories;
 using MiniCms.Web.Code.ExtensionMethods;
@@ -12,13 +10,14 @@ using MiniCms.Web.Models.Entities;
 
 namespace MiniCms.Web.Controllers
 {
-    public class NewsController : BaseController
+    public class ArticlesController : BaseController
     {
         private readonly IBlogPostRepository _blogPostRepository;
-        IFeatureRepository _featureRepository;
-        FeatureService _featureService;
+        readonly IFeatureRepository _featureRepository;
+        readonly FeatureService _featureService;
 
-        public NewsController(IFeatureRepository featureRepository, IBlogPostRepository blogPostRepository, IUserRepository userRepository) : base(userRepository)
+        public ArticlesController(IFeatureRepository featureRepository, IBlogPostRepository blogPostRepository, IUserRepository userRepository)
+            : base(userRepository)
         {
             _blogPostRepository = blogPostRepository;
             _featureRepository = featureRepository;

@@ -3,7 +3,7 @@
 <div class="grid-7">
     @foreach (var post in Model.Posts)
     {
-        <h1 class="beta"><a href="@post.FriendlyUrl">@post.Title</a></h1> 
+        <h1 class="beta"><a href="@post.Slug">@post.Title</a></h1> 
         
         if(!string.IsNullOrWhiteSpace(post.Tags))
         {

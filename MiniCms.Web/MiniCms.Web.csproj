@@ -352,7 +352,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Code\ExtensionMethods\HttpPostedFileBaseExtensions.cs" />
     <Compile Include="Controllers\MigrateController.cs" />
-    <Compile Include="Controllers\NewsController.cs" />
+    <Compile Include="Controllers\ArticlesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -2064,7 +2064,7 @@
     <Content Include="Views\Shared\EditorTemplates\tinymce_jquery_full.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\News\Create.cshtml" />
+    <Content Include="Views\Articles\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Admin\Settings.cshtml" />
@@ -2073,7 +2073,7 @@
     <Content Include="Views\Shared\_AdminMenu.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\News\Edit.cshtml" />
+    <Content Include="Views\Articles\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\css\bilvrak.less" />
@@ -2105,7 +2105,7 @@
     <Content Include="Views\Features\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\News\Search.cshtml" />
+    <Content Include="Views\Articles\Search.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Shared\Widgets\_BlogSidebar.cshtml" />
@@ -2114,7 +2114,7 @@
     <Content Include="Content\css\cristina.less" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\News\Details.cshtml" />
+    <Content Include="Views\Articles\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\css\minicmssite.less" />
@@ -2171,7 +2171,7 @@
     <Content Include="Views\Settings\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\News\Index.cshtml" />
+    <Content Include="Views\Articles\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Home\SignalR.cshtml" />

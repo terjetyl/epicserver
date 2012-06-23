@@ -24,11 +24,13 @@ namespace MiniCms.Web.Models.Entities
 
         public bool Published { get; set; }
 
-        private string _friendlyUrl;
-        public string FriendlyUrl
+        public int CommentCount { get; set; }
+
+        private string _slug;
+        public string Slug
         {
-            get { return _friendlyUrl ?? (_friendlyUrl = "/news/" + Id + "/" + Helper.Urlify(Title)); }
-            set { _friendlyUrl = value; }
+            get { return _slug ?? (_slug = "/articles/" + Id + "/" + Helper.Urlify(Title)); }
+            set { _slug = value; }
         }
     }
 }
