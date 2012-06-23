@@ -1,4 +1,8 @@
 ﻿@{
+    Bundles.Reference("Areas/Admin/Scripts/app.coffee");
+}
+
+@{
     ViewBag.Title = "Index";
 }
 
@@ -107,252 +111,12 @@
                             <td>Date</td>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody data-bind="foreach: articles">
                         <tr>
                             <td>
                                 <input type="checkbox" class="chkbck"></td>
                             <td>
-                                <a href="#" class="post_title">Serah Terima Jabatan Eselon IV Lingkup Balai Taman Nasional Baluran</a>
-                                <div class="operation">
-                                    <div class="btn-group" style="display: none;">
-                                        <button class="btn btn-small"><i class="icon-pencil-1"></i>Edit</button>
-                                        <button class="btn btn-small"><i class="icon-eye-2"></i>View</button>
-                                        <button class="btn btn-small"><i class="icon-trash-empty"></i>Delete</button>
-                                    </div>
-                                </div>
-                            </td>
-                            <td>Admin</td>
-                            <td><a href="#"><span class="label label-info">Breaking News</span></a></td>
-                            <td>No Tags</td>
-                            <td><span class="badge badge-info">0</span></td>
-                            <td>2012/05/03<br>
-                                Published</td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <input type="checkbox" class="chkbck"></td>
-                            <td>
-                                <a href="#" class="post_title">Teknik Budidaya Sentigi (Phempis acidula) Stek Mulai Memperlihatkan Hasil</a>
-                                <div class="operation">
-                                    <div class="btn-group" style="display: none;">
-                                        <button class="btn btn-small"><i class="icon-pencil-1"></i>Edit</button>
-                                        <button class="btn btn-small"><i class="icon-eye-2"></i>View</button>
-                                        <button class="btn btn-small"><i class="icon-trash-empty"></i>Delete</button>
-                                    </div>
-                                </div>
-                            </td>
-                            <td>Admin</td>
-                            <td><a href="#"><span class="label label-info">Breaking News</span></a></td>
-                            <td>No Tags</td>
-                            <td><span class="badge badge-info">0</span></td>
-                            <td>2012/05/03<br>
-                                Published</td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <input type="checkbox" class="chkbck"></td>
-                            <td>
-                                <a href="#" class="post_title">Pembinaan Habitat Savana Bekol, Bama &amp; Balanan</a>
-                                <div class="operation">
-                                    <div class="btn-group" style="display: none;">
-                                        <button class="btn btn-small"><i class="icon-pencil-1"></i>Edit</button>
-                                        <button class="btn btn-small"><i class="icon-eye-2"></i>View</button>
-                                        <button class="btn btn-small"><i class="icon-trash-empty"></i>Delete</button>
-                                    </div>
-                                </div>
-                            </td>
-                            <td>Admin</td>
-                            <td><a href="#"><span class="label label-info">Breaking News</span></a></td>
-                            <td>No Tags</td>
-                            <td><span class="badge badge-info">0</span></td>
-                            <td>2012/05/03<br>
-                                Published</td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <input type="checkbox" class="chkbck"></td>
-                            <td>
-                                <a href="#" class="post_title">Konsolidasi Konservasi ( K 2 )</a>
-                                <div class="operation">
-                                    <div class="btn-group" style="display: none;">
-                                        <button class="btn btn-small"><i class="icon-pencil-1"></i>Edit</button>
-                                        <button class="btn btn-small"><i class="icon-eye-2"></i>View</button>
-                                        <button class="btn btn-small"><i class="icon-trash-empty"></i>Delete</button>
-                                    </div>
-                                </div>
-                            </td>
-                            <td>Admin</td>
-                            <td><a href="#"><span class="label label-info">Breaking News</span></a></td>
-                            <td>No Tags</td>
-                            <td><span class="badge badge-info">0</span></td>
-                            <td>2012/05/03<br>
-                                Published</td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <input type="checkbox" class="chkbck"></td>
-                            <td>
-                                <a href="#" class="post_title">Pelepasliaran Merak Hijau di Savana Bekol</a>
-                                <div class="operation">
-                                    <div class="btn-group" style="display: none;">
-                                        <button class="btn btn-small"><i class="icon-pencil-1"></i>Edit</button>
-                                        <button class="btn btn-small"><i class="icon-eye-2"></i>View</button>
-                                        <button class="btn btn-small"><i class="icon-trash-empty"></i>Delete</button>
-                                    </div>
-                                </div>
-                            </td>
-                            <td>Admin</td>
-                            <td nowrap=""><a href="#"><span class="label label-info">Breaking News</span></a></td>
-                            <td nowrap="">No Tags</td>
-                            <td><span class="badge badge-info">0</span></td>
-                            <td>2012/05/03<br>
-                                Published</td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <input type="checkbox" class="chkbck"></td>
-                            <td>
-                                <a href="#" class="post_title">Perpisahan Sekaligus Merayakan Hut 56 Thn</a>
-                                <div class="operation">
-                                    <div class="btn-group" style="display: none;">
-                                        <button class="btn btn-small"><i class="icon-pencil-1"></i>Edit</button>
-                                        <button class="btn btn-small"><i class="icon-eye-2"></i>View</button>
-                                        <button class="btn btn-small"><i class="icon-trash-empty"></i>Delete</button>
-                                    </div>
-                                </div>
-                            </td>
-                            <td>Admin</td>
-                            <td><a href="#"><span class="label label-info">Breaking News</span></a></td>
-                            <td>No Tags</td>
-                            <td><span class="badge badge-info">0</span></td>
-                            <td>2012/05/03<br>
-                                Published</td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <input type="checkbox" class="chkbck"></td>
-                            <td>
-                                <a href="#" class="post_title">Launching dan Penandatanganan Surat Perjanjian Sponsorship 3rd Annual Baluran-PLN Birding Competition 2012</a>
-                                <div class="operation">
-                                    <div class="btn-group" style="display: none;">
-                                        <button class="btn btn-small"><i class="icon-pencil-1"></i>Edit</button>
-                                        <button class="btn btn-small"><i class="icon-eye-2"></i>View</button>
-                                        <button class="btn btn-small"><i class="icon-trash-empty"></i>Delete</button>
-                                    </div>
-                                </div>
-                            </td>
-                            <td>Admin</td>
-                            <td><a href="#"><span class="label label-info">Breaking News</span></a></td>
-                            <td>No Tags</td>
-                            <td><span class="badge badge-info">0</span></td>
-                            <td>2012/05/03<br>
-                                Published</td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <input type="checkbox" class="chkbck"></td>
-                            <td>
-                                <a href="#" class="post_title">Pengumuman Penetapan Pemenang Pelelangan Umum Pengadaan Jetski Di Taman Nasional Baluran</a>
-                                <div class="operation">
-                                    <div class="btn-group" style="display: none;">
-                                        <button class="btn btn-small"><i class="icon-pencil-1"></i>Edit</button>
-                                        <button class="btn btn-small"><i class="icon-eye-2"></i>View</button>
-                                        <button class="btn btn-small"><i class="icon-trash-empty"></i>Delete</button>
-                                    </div>
-                                </div>
-                            </td>
-                            <td>Admin</td>
-                            <td><a href="#"><span class="label label-info">Breaking News</span></a></td>
-                            <td>No Tags</td>
-                            <td><span class="badge badge-info">0</span></td>
-                            <td>2012/05/03<br>
-                                Published</td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <input type="checkbox" class="chkbck"></td>
-                            <td>
-                                <a href="#" class="post_title">Pengumuman Pelelangan Umum Pengadaan Jetski Di Taman Nasional Baluran</a>
-                                <div class="operation">
-                                    <div class="btn-group" style="display: none;">
-                                        <button class="btn btn-small"><i class="icon-pencil-1"></i>Edit</button>
-                                        <button class="btn btn-small"><i class="icon-eye-2"></i>View</button>
-                                        <button class="btn btn-small"><i class="icon-trash-empty"></i>Delete</button>
-                                    </div>
-                                </div>
-                            </td>
-                            <td>Admin</td>
-                            <td><a href="#"><span class="label label-info">Breaking News</span></a></td>
-                            <td>No Tags</td>
-                            <td><span class="badge badge-info">0</span></td>
-                            <td>2012/05/03<br>
-                                Published</td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <input type="checkbox" class="chkbck"></td>
-                            <td>
-                                <a href="#" class="post_title">Serah Terima Jabatan Eselon IV Lingkup Balai Taman Nasional Baluran</a>
-                                <div class="operation">
-                                    <div class="btn-group" style="display: none;">
-                                        <button class="btn btn-small"><i class="icon-pencil-1"></i>Edit</button>
-                                        <button class="btn btn-small"><i class="icon-eye-2"></i>View</button>
-                                        <button class="btn btn-small"><i class="icon-trash-empty"></i>Delete</button>
-                                    </div>
-                                </div>
-                            </td>
-                            <td>Admin</td>
-                            <td><a href="#"><span class="label label-info">Breaking News</span></a></td>
-                            <td>No Tags</td>
-                            <td><span class="badge badge-info">0</span></td>
-                            <td>2012/05/03<br>
-                                Published</td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <input type="checkbox" class="chkbck"></td>
-                            <td>
-                                <a href="#" class="post_title">Teknik Budidaya Sentigi (Phempis acidula) Stek Mulai Memperlihatkan Hasil</a>
-                                <div class="operation">
-                                    <div class="btn-group" style="display: none;">
-                                        <button class="btn btn-small"><i class="icon-pencil-1"></i>Edit</button>
-                                        <button class="btn btn-small"><i class="icon-eye-2"></i>View</button>
-                                        <button class="btn btn-small"><i class="icon-trash-empty"></i>Delete</button>
-                                    </div>
-                                </div>
-                            </td>
-                            <td>Admin</td>
-                            <td><a href="#"><span class="label label-info">Breaking News</span></a></td>
-                            <td>No Tags</td>
-                            <td><span class="badge badge-info">0</span></td>
-                            <td>2012/05/03<br>
-                                Published</td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <input type="checkbox" class="chkbck"></td>
-                            <td>
-                                <a href="#" class="post_title">Pembinaan Habitat Savana Bekol, Bama &amp; Balanan</a>
-                                <div class="operation">
-                                    <div class="btn-group" style="display: none;">
-                                        <button class="btn btn-small"><i class="icon-pencil-1"></i>Edit</button>
-                                        <button class="btn btn-small"><i class="icon-eye-2"></i>View</button>
-                                        <button class="btn btn-small"><i class="icon-trash-empty"></i>Delete</button>
-                                    </div>
-                                </div>
-                            </td>
-                            <td>Admin</td>
-                            <td><a href="#"><span class="label label-info">Breaking News</span></a></td>
-                            <td>No Tags</td>
-                            <td><span class="badge badge-info">0</span></td>
-                            <td>2012/05/03<br>
-                                Published</td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <input type="checkbox" class="chkbck"></td>
-                            <td>
-                                <a href="#" class="post_title">Konsolidasi Konservasi ( K 2 )</a>
+                                <a href="#" class="post_title" data-bind="text: Title"></a>
                                 <div class="operation">
                                     <div class="btn-group" style="display: none;">
                                         <button class="btn btn-small"><i class="icon-pencil-1"></i>Edit</button>
@@ -403,3 +167,14 @@
         </div>
     </div>
 </div>
+
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        var articles = new Articles();
+        articles.fetch().success(function() {
+            var vm = new ArticlesViewModel(articles);
+            ko.applyBindings(vm);
+        });
+    });
+</script>

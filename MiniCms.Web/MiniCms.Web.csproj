@@ -312,6 +312,7 @@
     <Compile Include="Code\NinjectDependencyScope.cs" />
     <Compile Include="Controllers\api\ArticlesController.cs" />
     <Compile Include="Controllers\api\BaseApiController.cs" />
+    <Compile Include="Controllers\api\CategoriesController.cs" />
     <Compile Include="Controllers\api\ImagesController.cs" />
     <Compile Include="Controllers\api\LocationController.cs" />
     <Compile Include="Controllers\api\MediaController.cs" />
@@ -333,6 +334,7 @@
     <Compile Include="Hubs\LocationHub.cs" />
     <Compile Include="Models\ArchiveModel.cs" />
     <Compile Include="Models\EditBlogPostViewModel.cs" />
+    <Compile Include="Models\Entities\Category.cs" />
     <Compile Include="Models\Entities\FeatureModel.cs" />
     <Compile Include="Models\Entities\Location.cs" />
     <Compile Include="Models\Entities\NewsletterSubscriber.cs" />
@@ -1202,11 +1204,23 @@
     <Content Include="Areas\Admin\Content\plugins\wysiwyg\bootstrap-wysihtml5.css" />
     <Content Include="Areas\Admin\Content\plugins\wysiwyg\bootstrap-wysihtml5.js" />
     <Content Include="Areas\Admin\Content\plugins\wysiwyg\wysihtml5.js" />
+    <Content Include="Areas\Admin\Scripts\app.js">
+      <DependentUpon>app.coffee</DependentUpon>
+    </Content>
     <Content Include="Areas\Admin\Scripts\demo.js" />
     <Content Include="Areas\Admin\Scripts\google-chart-index.js" />
     <Content Include="Areas\Admin\Scripts\google-chart.js" />
+    <Content Include="Areas\Admin\Scripts\models\article.js">
+      <DependentUpon>article.coffee</DependentUpon>
+    </Content>
+    <Content Include="Areas\Admin\Scripts\models\category.js">
+      <DependentUpon>category.coffee</DependentUpon>
+    </Content>
     <Content Include="Areas\Admin\Scripts\stats.js" />
     <Content Include="Areas\Admin\Scripts\themeswitcher.js" />
+    <Content Include="Areas\Admin\Scripts\viewmodels\articlesViewModel.js">
+      <DependentUpon>ArticlesViewModel.coffee</DependentUpon>
+    </Content>
     <Content Include="Content\bootstrap-responsive.css" />
     <Content Include="Content\bootstrap-responsive.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -1291,6 +1305,11 @@
     <Content Include="GoogleMaps.LocationServices.readme.txt" />
     <Content Include="README.jQuery.vsdoc.txt" />
     <Content Include="robots.txt" />
+    <Content Include="Scripts\backbone.js" />
+    <Content Include="Scripts\backbone.localStorage.js" />
+    <Content Include="Scripts\backbone.min.js">
+      <DependentUpon>backbone.js</DependentUpon>
+    </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\gmap3.min.js" />
@@ -1665,6 +1684,15 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\json2.js" />
     <Content Include="Scripts\json2.min.js" />
+    <Content Include="Scripts\knockback-inspector.css" />
+    <Content Include="Scripts\knockback-inspector.js" />
+    <Content Include="Scripts\knockback-inspector.min.js">
+      <DependentUpon>knockback-inspector.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\knockback.js" />
+    <Content Include="Scripts\knockback.min.js">
+      <DependentUpon>knockback.js</DependentUpon>
+    </Content>
     <Content Include="Scripts\knockout.js" />
     <Content Include="Scripts\less.min.js" />
     <Content Include="Scripts\modernizr-2.5.3.js" />
@@ -1973,6 +2001,10 @@
     <Content Include="Scripts\tinymce\utils\form_utils.js" />
     <Content Include="Scripts\tinymce\utils\mctabs.js" />
     <Content Include="Scripts\tinymce\utils\validate.js" />
+    <Content Include="Scripts\underscore.js" />
+    <Content Include="Scripts\underscore.min.js">
+      <DependentUpon>underscore.js</DependentUpon>
+    </Content>
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -2371,6 +2403,38 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Home\Chat.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Scripts\app.coffee">
+      <Compile>True</Compile>
+      <Minify>True</Minify>
+      <Bare>False</Bare>
+      <Iced>False</Iced>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Scripts\models\category.coffee">
+      <Compile>True</Compile>
+      <Minify>True</Minify>
+      <Bare>False</Bare>
+      <Iced>False</Iced>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Scripts\models\article.coffee">
+      <Compile>True</Compile>
+      <Minify>True</Minify>
+      <Bare>False</Bare>
+      <Iced>False</Iced>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Scripts\viewmodels\ArticlesViewModel.coffee">
+      <Compile>True</Compile>
+      <Minify>True</Minify>
+      <Bare>False</Bare>
+      <Iced>False</Iced>
+    </Content>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

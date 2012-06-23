@@ -1,4 +1,8 @@
 ﻿@{
+    Bundles.Reference("Areas/Admin/Scripts/app.coffee");
+}
+
+@{
     ViewBag.Title = "Create";
 }
 
@@ -245,26 +249,11 @@
                     <div class="tab-pane active" id="tab1">
                         <div class="inner">
                             <table class="table smallfont">
-                                <tbody>
+                                <tbody data-bind="foreach: categories">
                                     <tr>
                                         <td style="width: 10px;">
                                             <input type="checkbox" class="chkbck"></td>
-                                        <td>General News</td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <input type="checkbox" class="chkbck"></td>
-                                        <td>Breaking News</td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <input type="checkbox" class="chkbck"></td>
-                                        <td>Tips &amp; Tricks</td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <input type="checkbox" class="chkbck"></td>
-                                        <td>Headline News</td>
+                                        <td data-bind="text: Name"></td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -312,3 +301,20 @@
     </div>
 
 </div>
+
+<script type="text/javascript">
+    var viewModel = function(cats) {
+        var self = this;
+        self.categories = ko.observableArray(cats);
+    };
+
+    var vm;
+
+    $(document).ready(function () {
+        getcategories(function (data) {
+            console.log(data);
+            vm = new viewModel(data);
+            ko.applyBindings(vm);
+        });
+    });
+</script>

@@ -78,6 +78,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
     <Compile Include="RavenDb\BlogRepository.cs" />
+    <Compile Include="RavenDb\CategoryRepository.cs" />
     <Compile Include="RavenDb\ContentRepository.cs" />
     <Compile Include="RavenDb\FeatureRepository.cs" />
     <Compile Include="RavenDb\NewsletterRepository.cs" />

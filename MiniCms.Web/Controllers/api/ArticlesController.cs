@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Net;
+using System.Net.Http;
 using System.Web.Http;
 using MiniCms.Model.Entities;
 using MiniCms.Model.Repositories;
@@ -27,18 +28,19 @@ namespace MiniCms.Web.Controllers.api
             return _blogPostRepository.Get(id);
         }
 
-        public void Post(Article blogPost)
+        public HttpResponseMessage Post(Article article)
         {
-            var item = Mapper.Map(blogPost);
-            if(!string.IsNullOrEmpty(blogPost.ImageUrl))
+            var item = Mapper.Map(article);
+            if(!string.IsNullOrEmpty(article.ImageUrl))
             {
                 using (var client = new WebClient())
                 {
                     var imageHostClient = ImageHost.ServiceClient.ImageHostClient.GetFromConfig();
-                    item.ImageUrl = imageHostClient.UploadImage(client.DownloadData(blogPost.ImageUrl), Guid.NewGuid() + ".jpg");
+                    item.ImageUrl = imageHostClient.UploadImage(client.DownloadData(article.ImageUrl), Guid.NewGuid() + ".jpg");
                 }
             }
             _blogPostRepository.Save(item);
+            return new HttpResponseMessage(HttpStatusCode.Created);
         }
     }
 }

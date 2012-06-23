@@ -71,6 +71,7 @@ namespace MiniCms.Web.App_Start
             kernel.Bind<IContentRepository>().To<ContentRepository>();
             kernel.Bind<IFeatureRepository>().To<FeatureRepository>();
             kernel.Bind<IMailService>().To<MailService>();
+            kernel.Bind<ICategoryRepository>().To<CategoryRepository>();
         }        
     }
 }
