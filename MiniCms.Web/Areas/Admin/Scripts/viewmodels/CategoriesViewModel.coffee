@@ -16,7 +16,7 @@ class window.CategoriesViewModel extends kb.ViewModel
 			return true
 			
 
-class CategoryViewModel extends kb.ViewModel
+class window.CategoryViewModel extends kb.ViewModel
 	constructor: (model) ->
 		super(model)
 		@selected = ko.observable()

@@ -1224,6 +1224,9 @@
     <Content Include="Areas\Admin\Scripts\viewmodels\CategoriesViewModel.js">
       <DependentUpon>CategoriesViewModel.coffee</DependentUpon>
     </Content>
+    <Content Include="Areas\Admin\Scripts\viewmodels\CreateArticleViewModel.js">
+      <DependentUpon>CreateArticleViewModel.coffee</DependentUpon>
+    </Content>
     <Content Include="Content\bootstrap-responsive.css" />
     <Content Include="Content\bootstrap-responsive.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -2444,6 +2447,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\Admin\Scripts\viewmodels\CategoriesViewModel.coffee" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Scripts\viewmodels\CreateArticleViewModel.coffee">
+      <Compile>True</Compile>
+      <Minify>True</Minify>
+      <Bare>False</Bare>
+      <Iced>False</Iced>
+    </Content>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -8,6 +8,14 @@
       this.articles = kb.collectionObservable(model, {
         view_model: kb.ViewModel
       });
+      this.save = function(title, body) {
+        var article;
+        article = new Article({
+          Title: title,
+          Body: body
+        });
+        return article.save();
+      };
     }
 
     return ArticlesViewModel;

@@ -12,11 +12,7 @@
       return Article.__super__.constructor.apply(this, arguments);
     }
 
-    Article.prototype.defaults = {
-      id: null,
-      title: '',
-      body: ''
-    };
+    Article.prototype.idAttribute = 'Id';
 
     Article.prototype.urlRoot = '/api/articles';
 

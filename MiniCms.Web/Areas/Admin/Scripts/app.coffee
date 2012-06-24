@@ -4,6 +4,7 @@
 # @reference models/category.coffee
 # @reference models/article.coffee
 # @reference viewmodels/ArticlesViewModel.coffee
+# @reference viewmodels/CreateArticleViewModel.coffee
 # @reference viewmodels/CategoriesViewModel.coffee
 
 window.addcategory = (name) ->

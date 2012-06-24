@@ -1,8 +1,5 @@
 class window.Article extends Backbone.Model
-	defaults:
-		id: null
-		title: ''
-		body: ''
+	idAttribute: 'Id'
 	urlRoot: '/api/articles'
 
 class window.Articles extends Backbone.Collection

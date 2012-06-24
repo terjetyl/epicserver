@@ -31,7 +31,7 @@
         <h2 class='title'>Search This Blog</h2>
         <div class='widget-content'>
             <div id='search_form'>
-                @using (Html.BeginForm("Search", "News", System.Web.Mvc.FormMethod.Get))
+                @using (Html.BeginForm("Search", "Articles", System.Web.Mvc.FormMethod.Get))
                 {
                     <input type="text" class="gsc-input" name="q" />
                     <input type="submit" value="Search" />

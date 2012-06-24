@@ -18,7 +18,7 @@
                     </div>
                 </div>
 
-                <input type="text" name="post_title" class="input-xxlarge-fluid" placeholder="Title">
+                <input type="text" name="post_title" id="post_title" class="input-xxlarge-fluid" placeholder="Title">
 
                 <textarea id="textarea" class="textarea" placeholder="Enter text ..." style="width: 100%; height: 250px"></textarea>
                 
@@ -187,7 +187,7 @@
 
             <div class="subnav nobg">
                 <button class="btn btn-danger btn-small pull-left">Move to Trash</button>
-                <button class="btn btn-primary btn-small pull-right">Publish</button>
+                <button id="btn-publish" class="btn btn-primary btn-small pull-right">Publish</button>
             </div>
 
         </div>
@@ -213,11 +213,11 @@
                     <div class="tab-pane active" id="tab1">
                         <div class="inner">
                             <table class="table smallfont">
-                                <tbody>
+                                <tbody data-bind="foreach: categories">
                                     <tr>
                                         <td style="width: 10px;">
                                             <input type="checkbox" class="chkbck"></td>
-                                        <td></td>
+                                        <td data-bind="text: Name"></td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -267,18 +267,18 @@
 </div>
 
 <script type="text/javascript">
-    var viewModel = function(cats) {
-        var self = this;
-        self.categories = ko.observableArray(cats);
-    };
-
-    var vm;
-
+    
     $(document).ready(function () {
-        getcategories(function (data) {
-            console.log(data);
-            vm = new viewModel(data);
-            ko.applyBindings(vm);
+        
+        var categories = new Categories();
+        var viewModel = new CreateArticleViewModel(categories);
+        categories.fetch();
+        ko.applyBindings(viewModel);
+
+        $('#btn-publish').click(function () {
+            console.log("btn-publish clicked");
+            viewModel.save($('#post_title').val(), $('#textarea').val());
         });
     });
+
 </script>

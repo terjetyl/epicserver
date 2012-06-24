@@ -65,7 +65,7 @@ namespace MiniCms.Web.Controllers
         {
             return new Article
             {
-                Author = blogPost.Author,
+                Author = blogPost.Author ?? string.Empty,
                 Body = blogPost.Body,
                 DatePublished = blogPost.DatePublished,
                 Title = blogPost.Title,
