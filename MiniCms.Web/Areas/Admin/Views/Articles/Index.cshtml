@@ -26,7 +26,7 @@
                     <div class="navbar-inner">
                         <div class="container" style="width: auto;">
                             <a class="brand">Articles</a>
-                            <a class="btn pull-right" href="add-new-article.html">Add New</a>
+                            <a class="btn pull-right" href="/admin/articles/create">Add New</a>
                         </div>
                     </div>
                 </div>
@@ -127,10 +127,9 @@
                             </td>
                             <td data-bind="text: Author">Admin</td>
                             <td><a href="#"><span class="label label-info">Breaking News</span></a></td>
-                            <td>No Tags</td>
-                            <td><span class="badge badge-info" data-bind="text: CommentCount">0</span></td>
-                            <td>2012/05/03<br />
-                                Published</td>
+                            <td data-bind="text: Tags"></td>
+                            <td><span class="badge badge-info" data-bind="text: CommentCount"></span></td>
+                            <td data-bind="text: DatePublished"></td>
                         </tr>
                     </tbody>
                 </table>
@@ -172,9 +171,10 @@
 <script type="text/javascript">
     $(document).ready(function() {
         var articles = new Articles();
-        articles.fetch().success(function() {
-            var vm = new ArticlesViewModel(articles);
-            ko.applyBindings(vm);
-        });
+        var categories = new Categories();
+        var vm = new ArticlesViewModel(articles, categories);
+        articles.fetch();
+        categories.fetch();
+        ko.applyBindings(vm);
     });
 </script>

@@ -71,7 +71,7 @@ namespace MiniCms.Web.Controllers
                 Title = blogPost.Title,
                 Id = blogPost.Id,
                 ImageUrl = blogPost.ImageUrl,
-                Tags = blogPost.Tags != null ? string.Join(", ", blogPost.Tags) : string.Empty,
+                Tags = blogPost.Tags != null && blogPost.Tags.Any() ? string.Join(", ", blogPost.Tags) : "No tags",
                 Published = blogPost.Published
             };
         }
