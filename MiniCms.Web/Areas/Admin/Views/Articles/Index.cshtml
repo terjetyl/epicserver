@@ -102,7 +102,7 @@
                     <thead>
                         <tr>
                             <td style="width: 20px;">
-                                <input type="checkbox" id="chkbck"></td>
+                                <input type="checkbox" data-bind="click: selectAll, checked: checkAll" id="chkbck"></td>
                             <td>Title</td>
                             <td>Author</td>
                             <td>Categories</td>
@@ -114,9 +114,9 @@
                     <tbody data-bind="foreach: articles">
                         <tr>
                             <td>
-                                <input type="checkbox" class="chkbck"></td>
+                                <input type="checkbox" data-bind="checked: selected" class="chkbck"></td>
                             <td>
-                                <a target="_blank" class="post_title" data-bind="text: Title, attr: { href: Slug, title: Title }"></a>
+                                <a target="_blank" class="post_title" data-bind="text: title, attr: { href: slug, title: title }"></a>
                                 <div class="operation">
                                     <div class="btn-group" style="display: none;">
                                         <button class="btn btn-small"><i class="icon-pencil-1"></i>Edit</button>
@@ -125,11 +125,11 @@
                                     </div>
                                 </div>
                             </td>
-                            <td data-bind="text: Author">Admin</td>
+                            <td data-bind="text: author">Admin</td>
                             <td><a href="#"><span class="label label-info">Breaking News</span></a></td>
-                            <td data-bind="text: Tags"></td>
-                            <td><span class="badge badge-info" data-bind="text: CommentCount"></span></td>
-                            <td data-bind="text: DatePublished"></td>
+                            <td data-bind="text: tags"></td>
+                            <td><span class="badge badge-info" data-bind="text: commentcount"></span></td>
+                            <td data-bind="text: date"></td>
                         </tr>
                     </tbody>
                 </table>
